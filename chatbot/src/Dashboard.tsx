@@ -36,7 +36,7 @@ const Dashboard = () => {
   const [sessionReady, setSessionReady] = useState(false);
   const [sessionId, setSessionId] = useState<string>('');
   const [thinking, setThinking] = useState(false);
-  
+  const [Like,setLike]=useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -170,6 +170,32 @@ const Dashboard = () => {
     }
   };
 
+  const FeedbackButtons = ({ messageId, initialHelpful }) => {
+    // initialHelpful can be true, false, or null (not rated yet)
+    const [feedback, setFeedback] = useState(initialHelpful); 
+  
+    const handleFeedback = async (value) => {
+      try {
+        setFeedback(value); // update local state
+  
+        const response = await axios.put(
+          `http://localhost:3001/api/messages/${messageId}`,
+          { helpful: value }, // true for like, false for dislike
+          { withCredentials: true }
+        );
+  
+        if (response.status === 200) {
+          console.log("Feedback updated successfully:", response.data);
+        } else {
+          console.error("Failed to update feedback");
+        }
+      } catch (err) {
+        console.error("Error updating feedback:", err);
+      }
+    };}
+
+ 
+
   const toggleChat = () => { 
     setIsChatOpen(!isChatOpen); 
     if (!isChatOpen) { 
@@ -210,8 +236,7 @@ const Dashboard = () => {
     );
     
     // Send feedback to backend
-    axios.post(`http://localhost:3001/api/feedback/${sessionId}`, {
-      messageId,
+    axios.post(`http://localhost:3001/api/messages/${ messageId}`, {
       helpful
     }, { withCredentials: true }).catch(err => {
       console.error('Failed to send feedback:', err);
@@ -402,18 +427,18 @@ const Dashboard = () => {
                             {message.sender === 'bot' && message.status === 'read' && (
                               <div className="feedback-buttons">
                                 <span>Was this helpful?</span>
-                                <button 
-                                  className={`feedback-btn ${message.helpful === true ? 'active' : ''}`}
-                                  onClick={() => handleFeedback(message.id, true)}
-                                >
-                                  <FaThumbsUp />
-                                </button>
-                                <button 
-                                  className={`feedback-btn ${message.helpful === false ? 'active' : ''}`}
-                                  onClick={() => handleFeedback(message.id, false)}
-                                >
-                                  <FaThumbsDown />
-                                </button>
+                                <button
+        className={`feedback-btn thumbs-up ${message.helpful === true ? 'active' : ''}`}
+        onClick={() => handleFeedback(message.id, true)}
+      >
+        <FaThumbsUp />
+      </button>
+      <button
+        className={`feedback-btn thumbs-down ${message.helpful === false ? 'active' : ''}`}
+        onClick={() => handleFeedback(message.id, false)}
+      >
+        <FaThumbsDown />
+      </button>
                               </div>
                             )}
                           </div>

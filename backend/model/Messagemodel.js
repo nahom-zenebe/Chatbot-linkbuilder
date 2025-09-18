@@ -7,6 +7,7 @@ const messageSchema = new mongoose.Schema({
   text: { type: String, required: true },
   timestamp: { type: Date, default: Date.now },
   intent: { type: String }, 
+  helpful:{type:Boolean,default:false},
   metadata: { type: Object }, 
 });
 

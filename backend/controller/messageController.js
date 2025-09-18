@@ -43,3 +43,30 @@ exports.getSessionMessages = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+
+exports.updateFeedback = async (req, res) => {
+  try {
+    const { helpful } = req.body;
+    const {messageId}=req.params
+
+    if (!messageId) {
+      return res.status(400).json({ error: "messageId is required" });
+    }
+
+    const updatedMessage = await Message.findByIdAndUpdate(
+      messageId,
+      { helpful },
+      { new: true } // returns the updated document
+    );
+
+    if (!updatedMessage) {
+      return res.status(404).json({ error: "Message not found" });
+    }
+
+    return res.json(updatedMessage);
+  } catch (error) {
+    console.error("Error updating feedback:", error);
+    res.status(500).json({ error: "Error updating feedback" });
+  }
+};

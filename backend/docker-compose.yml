@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    container_name: backend
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+      - chroma
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - app-network
+
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chroma
+    restart: always
+    ports:
+      - "8000:8000"
+    command: chroma start --persist-directory /chroma-data
+    volumes:
+      - chroma_data:/chroma-data
+    networks:
+      - app-network
+
+volumes:
+  mongo_data:
+  chroma_data:
+
+networks:
+  app-network:
+    driver: bridge
