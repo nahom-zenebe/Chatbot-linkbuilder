@@ -96,7 +96,7 @@ npm install
 ```
 ## Run chromadb
 ```
-pip install chromadb
+npm install chromadb @chroma-core/default-embed
 chroma run --path services.chromaService.js
 chroma run --path ./chroma-data
 ```
