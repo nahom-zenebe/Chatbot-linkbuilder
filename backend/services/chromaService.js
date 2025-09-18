@@ -1,7 +1,6 @@
 const { ChromaClient } = require("chromadb");
 const { DefaultEmbeddingFunction } = require("@chroma-core/default-embed");
 
-
 const client = new ChromaClient({
   host: "localhost",
   port: 8000,
@@ -11,57 +10,70 @@ const client = new ChromaClient({
 
 let collection;
 
-
 async function initChroma() {
   if (!collection) {
     collection = await client.getOrCreateCollection({ name: "faq_dataset" });
-    console.log("Chroma collection initialized.");
+    console.log('[Chroma] Initialized collection "faq_dataset"');
   }
 }
 
 async function addChromaEntry(entry) {
   await initChroma();
+  const id = entry.id.toString();
 
-  if (!entry.id || !entry.prompt || !entry.completion) {
-    throw new Error("Entry must have id, prompt, and completion");
-  }
-
-  await collection.add({
-    ids: [entry.id.toString()],
-    documents: [entry.prompt],
-    metadatas: [
-      {
+  const existing = await collection.get({ ids: [id] });
+  if (existing.ids?.includes(id)) {
+    console.log(`[Chroma] Entry ${id} already exists—updating`);
+    await collection.update({
+      ids: [id],
+      documents: [entry.prompt],
+      metadatas: [{
+        category: entry.category,
         prompt: entry.prompt,
         completion: entry.completion,
-        category: entry.category || "",
-        tags: entry.tags ? entry.tags.join(",") : "",
-      },
-    ],
-  });
-
-  console.log(`Entry ${entry.id} added successfully.`);
+        tags: entry.tags.join(",")
+      }]
+    });
+  } else {
+    await collection.add({
+      ids: [id],
+      documents: [entry.prompt],
+      metadatas: [{
+        category: entry.category,
+        prompt: entry.prompt,
+        completion: entry.completion,
+        tags: entry.tags.join(",")
+      }]
+    });
+    console.log(`[Chroma] Added entry ${id}: "${entry.prompt}"`);
+  }
 }
 
-
-async function searchChroma(query) {
+// Search top-k results (default k=3) and return completions with distances
+async function searchChroma(query, topK = 3) {
   await initChroma();
-
   const results = await collection.query({
     queryTexts: [query],
-    nResults: 1,
-    include: ["metadatas", "distances", "documents", "embeddings"],
+    nResults: topK,
+    include: ["metadatas", "documents", "distances"],
   });
 
-  console.log("Query results:", JSON.stringify(results, null, 2));
-
-  // Fallback to first metadata entry if distances empty
-  let metadata;
-  if (results.metadatas?.[0]?.length > 0) {
-    metadata = results.metadatas[0][0];
-    return metadata.completion || null;
+  if (!results.metadatas?.[0]?.length) {
+    console.log(`[Chroma] MISS: No results for "${query}"`);
+    return [];
   }
 
-  return null;
+  // Map results to a structured array
+  const mapped = results.metadatas[0].map((metadata, i) => ({
+    completion: metadata.completion,
+    category: metadata.category,
+    tags: metadata.tags ? metadata.tags.split(",") : [],
+    distance: results.distances?.[0]?.[i] ?? 1,
+    prompt: metadata.prompt
+  }));
+
+  console.log(`[Chroma] Query "${query}" top-${topK} results:`, mapped);
+  return mapped;
 }
 
 module.exports = { initChroma, addChromaEntry, searchChroma };

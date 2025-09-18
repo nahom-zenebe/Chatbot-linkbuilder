@@ -253,7 +253,7 @@ const Dashboard = () => {
 
   // Sample data
   const faqCategories = [ 
-    { title: "Getting Started", questions: [ "How do I create my first cluster?", "How to connect to my Atlas Cluster?", "Where can I find sample data?" ] }, 
+    { title: "Getting Started", questions: [ "How do I create my first cluster?", "How to connect to my Atlas Cluster?", " can I find sample data?" ] }, 
     { title: "Account & Billing", questions: [ "How do I reset my password?", "How to update my payment method?", "What does Basic Support cover?" ] }, 
     { title: "Troubleshooting", questions: [ "How to close connections in Linkbuilder Atlas?", "Why is my cluster slow?", "How to resolve connection issues?" ] } 
   ];
