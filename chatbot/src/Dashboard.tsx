@@ -255,10 +255,58 @@ const Dashboard = () => {
   };
 
   // Sample data
-  const faqCategories = [ 
-    { title: "Getting Started", questions: [ "How do I create my first cluster?", "How to connect to my Atlas Cluster?", "Where can I find sample data?" ] }, 
-    { title: "Account & Billing", questions: [ "How do I reset my password?", "How to update my payment method?", "What does Basic Support cover?" ] }, 
-    { title: "Troubleshooting", questions: [ "How to close connections in Linkbuilder Atlas?", "Why is my cluster slow?", "How to resolve connection issues?" ] } 
+  const faqCategories = [
+    
+    {
+      title: "FAQ",
+      questions: [
+        "What is your pricing?",
+        "Can I filter websites by domain rating?",
+        "What does 'Exclude Existing Domains & IPs' mean?",
+        "What is the difference between Permanent Article and Yearly Article?",
+        "Can I export my website list?",
+        
+      ]
+    },
+    {
+      title: "Navigation",
+      questions: [
+        "How do I see my order details?",
+        "How do I add a new website?",
+        "Show me all websites with a spam score below 10",
+        "How do I navigate to the dashboard?",
+      
+      ]
+    },
+    {
+      title: "Recommendation",
+      questions: [
+        "Can you recommend a plan for a small business?",
+        "Can you recommend a website for backlinks?",
+        "I want to see only EU websites",
+        "I want to see only websites with permanent articles"
+      ]
+    },
+    {
+      title: "Customer Support",
+      questions: [
+        "How do I change the currency for prices?",
+        "I can't find the group filter",
+        "How do I reset my password?",
+        "How do I contact support?",
+        "Can I delete a website from my account?",
+       
+      ]
+    },
+    {
+      title: "Feedback",
+      questions: [
+        "The filter panel is not responsive on my phone",
+        "How do I leave feedback?",
+        "Your recommendations were not helpful",
+        "How do I report a bug?"
+      ]
+    }
   ];
   
   const quickReplies = [ "Can I export my website list", "How do I contact support?", "I can't find the group filter", "How do I leave feedback?" ]; 

@@ -1,418 +1,3120 @@
 [
-    {
-      "id": 1,
-      "prompt": "Hi",
-      "completion": "Hi! How can I assist you today?",
-      "category": "greeting",
-      "context": "",
-      "tags": ["welcome", "user_greeting"]
-    },
-    {
-      "id": 2,
-      "prompt": "What is your pricing?",
-      "completion": "Our pricing starts at $99 per month. For details, visit '/dashboard/pricing'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["pricing", "cost", "plans"]
-    },
-    {
-      "id": 3,
-      "prompt": "How do I see my order details?",
-      "completion": "Go to '/yourorder/detailorder' from the dashboard to see your order details.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["ui", "page_navigation", "orders"]
-    },
-    {
-      "id": 4,
-      "prompt": "Can you recommend a plan for a small business?",
-      "completion": "Sure! For small businesses, our Starter Plan is a great fit. You can review its features at '/dashboard/pricing'.",
-      "category": "recommendation",
-      "context": "",
-      "tags": ["plans", "recommendation", "small_business"]
-    },
-    {
-      "id": 5,
-      "prompt": "How do I add a new website?",
-      "completion": "To add a new website, click 'Add Website' on your dashboard or go to '/dashboard/addwebsite'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["website", "add", "dashboard"]
-    },
-    {
-      "id": 6,
-      "prompt": "Can I filter websites by domain rating?",
-      "completion": "Yes, use the Domain Rating slider in the filter panel to select your preferred range.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["filter", "domain_rating", "search"]
-    },
-    {
-      "id": 7,
-      "prompt": "What does 'Exclude Existing Domains & IPs' mean?",
-      "completion": "This filter lets you exclude domains and IPs you already own or have purchased from your search results.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["filter", "exclude", "domains", "ips"]
-    },
-    {
-      "id": 8,
-      "prompt": "How do I change the currency for prices?",
-      "completion": "You can change the currency by selecting your preferred option in the Currency dropdown in the filter panel.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["currency", "settings", "filter"]
-    },
-    {
-      "id": 9,
-      "prompt": "I can't find the group filter",
-      "completion": "The Group filter is under the 'Exclude Existing Domains & IPs' section. If you need help, visit '/dashboard/help'.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["filter", "group", "help"]
-    },
-    {
-      "id": 10,
-      "prompt": "Can you recommend a website for backlinks?",
-      "completion": "Sure! Please specify your niche or target country, and I'll suggest relevant websites for backlinks.",
-      "category": "recommendation",
-      "context": "",
-      "tags": ["backlinks", "recommendation", "niche"]
-    },
-    {
-      "id": 11,
-      "prompt": "What is the difference between Permanent Article and Yearly Article?",
-      "completion": "A Permanent Article stays on the website indefinitely, while a Yearly Article is published for one year and may be removed afterward.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["article", "permanent", "yearly"]
-    },
-    {
-      "id": 12,
-      "prompt": "How do I reset my password?",
-      "completion": "Click 'Forgot Password' on the login page or go to '/auth/resetpassword' and follow the instructions.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["password", "reset", "auth"]
-    },
-    {
-      "id": 13,
-      "prompt": "Can I export my website list?",
-      "completion": "Yes, click the 'Export' button at the top of the website table or go to '/dashboard/export'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["export", "website", "dashboard"]
-    },
-    {
-      "id": 14,
-      "prompt": "The filter panel is not responsive on my phone",
-      "completion": "Sorry for the inconvenience. Please refresh the page. If the issue persists, contact support at '/dashboard/help'.",
-      "category": "feedback",
-      "context": "User reported filter panel issue on mobile",
-      "tags": ["responsive", "mobile", "feedback"]
-    },
-    {
-      "id": 15,
-      "prompt": "How do I contact support?",
-      "completion": "Contact support by clicking the 'Help' icon or visiting '/dashboard/help'.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["support", "help", "contact"]
-    },
-    {
-      "id": 16,
-      "prompt": "Can I filter by traffic and referring domains at the same time?",
-      "completion": "Absolutely! Use the sliders for Organic Traffic and Referring Domains in the filter panel to set your desired ranges.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["filter", "traffic", "referring_domains"]
-    },
-    {
-      "id": 17,
-      "prompt": "What is the minimum domain rating I can select?",
-      "completion": "The minimum domain rating is shown on the left end of the Domain Rating slider in the filter panel.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["domain_rating", "filter", "minimum"]
-    },
-    {
-      "id": 18,
-      "prompt": "I want to see only EU websites",
-      "completion": "Filter by country and select 'EU' or specific European countries in the Country (Traffic) filter.",
-      "category": "recommendation",
-      "context": "",
-      "tags": ["country", "EU", "filter"]
-    },
-    {
-      "id": 19,
-      "prompt": "How do I leave feedback?",
-      "completion": "Leave feedback by clicking the 'Feedback' button in the sidebar or visiting '/dashboard/feedback'.",
-      "category": "feedback",
-      "context": "",
-      "tags": ["feedback", "user_feedback"]
-    },
-    {
-      "id": 20,
-      "prompt": "Your recommendations were not helpful",
-      "completion": "Thank you for your feedback. Can you tell me more about what you were looking for? I'll try to improve my suggestions.",
-      "category": "feedback",
-      "context": "User received recommendations",
-      "tags": ["recommendation", "feedback", "improvement"]
-    },
-    {
-      "id": 21,
-      "prompt": "Show me all websites with a spam score below 10",
-      "completion": "Set the Spam Score slider to a maximum of 10 in the filter panel to see those websites.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["spam_score", "filter", "search"]
-    },
-    {
-      "id": 22,
-      "prompt": "How do I navigate to the dashboard?",
-      "completion": "Click the 'Dashboard' link in the main navigation menu or go to '/dashboard'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["dashboard", "navigation", "ui"]
-    },
-    {
-      "id": 23,
-      "prompt": "Can I save my filter settings?",
-      "completion": "Yes, click the 'Save Filter' button at the bottom of the filter panel.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["filter", "save", "settings"]
-    },
-    {
-      "id": 24,
-      "prompt": "What happens if I exclude IPs?",
-      "completion": "Excluding IPs will remove websites from your results that share IP addresses with domains you already own or have purchased.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["exclude", "IPs", "filter"]
-    },
-    {
-      "id": 25,
-      "prompt": "How do I view website details?",
-      "completion": "Click on any website in the list to view its details, metrics, and available options.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["website", "details", "metrics"]
-    },
-    {
-      "id": 26,
-      "prompt": "Can I filter by niche?",
-      "completion": "Yes, use the 'Allowed Niches' filter to select one or more niches for your search.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["niche", "filter", "search"]
-    },
-    {
-      "id": 27,
-      "prompt": "How do I log out?",
-      "completion": "Click your profile icon in the top right corner and select 'Log Out' from the dropdown menu.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["logout", "profile", "navigation"]
-    },
-    {
-      "id": 28,
-      "prompt": "What is the maximum traffic I can filter for?",
-      "completion": "The maximum traffic value is shown on the right end of the Organic Traffic slider. Adjust the slider to set your preferred range.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["traffic", "filter", "maximum"]
-    },
-    {
-      "id": 29,
-      "prompt": "Can I filter by multiple categories?",
-      "completion": "Yes, select as many categories as you like in the Category filter. Your results will update automatically.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["category", "filter", "search"]
-    },
-    {
-      "id": 30,
-      "prompt": "How do I add a new group?",
-      "completion": "Go to '/dashboard/groups' and click 'Add Group'. Enter the group name and save.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["group", "add", "dashboard"]
-    },
-    {
-      "id": 31,
-      "prompt": "I want to see only websites with permanent articles",
-      "completion": "Use the Permanent Article price slider to filter for websites offering permanent articles.",
-      "category": "recommendation",
-      "context": "",
-      "tags": ["permanent_article", "filter", "search"]
-    },
-    {
-      "id": 32,
-      "prompt": "Can I change the language of the interface?",
-      "completion": "Yes, change the language by selecting your preferred option in the Language dropdown in '/dashboard/settings'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["language", "settings", "interface"]
-    },
-    {
-      "id": 33,
-      "prompt": "Can I delete a website from my account?",
-      "completion": "Yes, go to '/dashboard/websites', select the website you want to delete, and click the 'Delete' button.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["website", "delete", "account"]
-    },
-    {
-      "id": 34,
-      "prompt": "How do I update my profile information?",
-      "completion": "To update your profile, visit '/dashboard/settings/profile' and edit your details.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["profile", "update", "settings"]
-    },
-    {
-      "id": 35,
-      "prompt": "What payment methods do you accept?",
-      "completion": "We accept credit cards, PayPal, and bank transfers. You can manage payment options at '/dashboard/billing'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["payment", "methods", "billing"]
-    },
-    {
-      "id": 36,
-      "prompt": "Can I get a refund?",
-      "completion": "Refunds are available within 30 days of purchase. Please contact support via '/dashboard/help' for assistance.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["refund", "support", "purchase"]
-    },
-    {
-      "id": 37,
-      "prompt": "How do I change my password?",
-      "completion": "Go to '/dashboard/settings/security' and select 'Change Password'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["password", "change", "security"]
-    },
-    {
-      "id": 38,
-      "prompt": "Can I view my billing history?",
-      "completion": "Yes, your billing history is available at '/dashboard/billing/history'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["billing", "history", "payments"]
-    },
-    {
-      "id": 39,
-      "prompt": "How do I contact the admin?",
-      "completion": "You can contact the admin by sending a message through '/dashboard/help' or emailing admin@example.com.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["admin", "contact", "support"]
-    },
-    {
-      "id": 40,
-      "prompt": "Can I set up two-factor authentication?",
-      "completion": "Yes, enable two-factor authentication in '/dashboard/settings/security'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["security", "2FA", "settings"]
-    },
-    {
-      "id": 41,
-      "prompt": "How do I view notifications?",
-      "completion": "Notifications are shown in the bell icon at the top right or at '/dashboard/notifications'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["notifications", "dashboard", "alerts"]
-    },
-    {
-      "id": 42,
-      "prompt": "Can I customize my dashboard layout?",
-      "completion": "Yes, you can customize your dashboard by dragging and dropping widgets at '/dashboard'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["dashboard", "customize", "widgets"]
-    },
-    {
-      "id": 43,
-      "prompt": "How do I invite a team member?",
-      "completion": "Invite team members by going to '/dashboard/team' and clicking 'Invite Member'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["team", "invite", "collaboration"]
-    },
-    {
-      "id": 44,
-      "prompt": "Can I set up email alerts for new orders?",
-      "completion": "Yes, configure email alerts in '/dashboard/settings/notifications'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["email", "alerts", "orders"]
-    },
-    {
-      "id": 45,
-      "prompt": "How do I access API documentation?",
-      "completion": "API documentation is available at '/dashboard/api/docs'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["API", "documentation", "developer"]
-    },
-    {
-      "id": 46,
-      "prompt": "Can I change my subscription plan?",
-      "completion": "Change your subscription plan at '/dashboard/billing/subscription'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["subscription", "plan", "billing"]
-    },
-    {
-      "id": 47,
-      "prompt": "How do I report a bug?",
-      "completion": "Report bugs by clicking 'Report Issue' in the sidebar or visiting '/dashboard/help/bug'.",
-      "category": "feedback",
-      "context": "",
-      "tags": ["bug", "report", "issue"]
-    },
-    {
-      "id": 48,
-      "prompt": "Can I get a demo of the platform?",
-      "completion": "Request a demo by filling out the form at '/dashboard/demo'.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["demo", "request", "platform"]
-    },
-    {
-      "id": 49,
-      "prompt": "How do I view analytics for my websites?",
-      "completion": "View website analytics at '/dashboard/websites/analytics'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["analytics", "websites", "dashboard"]
-    },
-    {
-      "id": 50,
-      "prompt": "Can I set up custom filters?",
-      "completion": "Yes, create and save custom filters in the filter panel or at '/dashboard/filters'.",
-      "category": "FAQ",
-      "context": "",
-      "tags": ["filters", "custom", "search"]
-    },
-    {
-      "id": 51,
-      "prompt": "How do I access the help center?",
-      "completion": "Access the help center at '/dashboard/help'.",
-      "category": "navigation",
-      "context": "",
-      "tags": ["help", "support", "center"]
-    },
-    {
-      "id": 52,
-      "prompt": "Can I undo a recent action?",
-      "completion": "Some actions can be undone. Check for an 'Undo' button or visit '/dashboard/activity' to review recent actions.",
-      "category": "customer_support",
-      "context": "",
-      "tags": ["undo", "activity", "actions"]
-    }
-  ]  
+  {
+    "id": 1,
+    "prompt": "Hi",
+    "completion": "Hi! How can I assist you today?",
+    "category": "greeting",
+    "context": "",
+    "tags": ["welcome", "user_greeting"]
+  },
+  {
+    "id": 2,
+    "prompt": "What is your pricing?",
+    "completion": "Our pricing starts at $99 per month. For details, visit '/dashboard/pricing'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["pricing", "cost", "plans"]
+  },
+  {
+    "id": 3,
+    "prompt": "How do I see my order details?",
+    "completion": "Go to '/yourorder/detailorder' from the dashboard to see your order details.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["ui", "page_navigation", "orders"]
+  },
+  {
+    "id": 4,
+    "prompt": "Can you recommend a plan for a small business?",
+    "completion": "Sure! For small businesses, our Starter Plan is a great fit. You can review its features at '/dashboard/pricing'.",
+    "category": "recommendation",
+    "context": "",
+    "tags": ["plans", "recommendation", "small_business"]
+  },
+  {
+    "id": 5,
+    "prompt": "How do I add a new website?",
+    "completion": "To add a new website, click 'Add Website' on your dashboard or go to '/dashboard/addwebsite'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["website", "add", "dashboard"]
+  },
+  {
+    "id": 6,
+    "prompt": "Can I filter websites by domain rating?",
+    "completion": "Yes, use the Domain Rating slider in the filter panel to select your preferred range.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["filter", "domain_rating", "search"]
+  },
+  {
+    "id": 7,
+    "prompt": "What does 'Exclude Existing Domains & IPs' mean?",
+    "completion": "This filter lets you exclude domains and IPs you already own or have purchased from your search results.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["filter", "exclude", "domains", "ips"]
+  },
+  {
+    "id": 8,
+    "prompt": "How do I change the currency for prices?",
+    "completion": "You can change the currency by selecting your preferred option in the Currency dropdown in the filter panel.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["currency", "settings", "filter"]
+  },
+  {
+    "id": 9,
+    "prompt": "I can't find the group filter",
+    "completion": "The Group filter is under the 'Exclude Existing Domains & IPs' section. If you need help, visit '/dashboard/help'.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["filter", "group", "help"]
+  },
+  {
+    "id": 10,
+    "prompt": "Can you recommend a website for backlinks?",
+    "completion": "Sure! Please specify your niche or target country, and I'll suggest relevant websites for backlinks.",
+    "category": "recommendation",
+    "context": "",
+    "tags": ["backlinks", "recommendation", "niche"]
+  },
+  {
+    "id": 11,
+    "prompt": "What is the difference between Permanent Article and Yearly Article?",
+    "completion": "A Permanent Article stays on the website indefinitely, while a Yearly Article is published for one year and may be removed afterward.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["article", "permanent", "yearly"]
+  },
+  {
+    "id": 12,
+    "prompt": "How do I reset my password?",
+    "completion": "Click 'Forgot Password' on the login page or go to '/auth/resetpassword' and follow the instructions.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["password", "reset", "auth"]
+  },
+  {
+    "id": 13,
+    "prompt": "Can I export my website list?",
+    "completion": "Yes, click the 'Export' button at the top of the website table or go to '/dashboard/export'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["export", "website", "dashboard"]
+  },
+  {
+    "id": 14,
+    "prompt": "The filter panel is not responsive on my phone",
+    "completion": "Sorry for the inconvenience. Please refresh the page. If the issue persists, contact support at '/dashboard/help'.",
+    "category": "feedback",
+    "context": "User reported filter panel issue on mobile",
+    "tags": ["responsive", "mobile", "feedback"]
+  },
+  {
+    "id": 15,
+    "prompt": "How do I contact support?",
+    "completion": "Contact support by clicking the 'Help' icon or visiting '/dashboard/help'.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["support", "help", "contact"]
+  },
+  {
+    "id": 16,
+    "prompt": "Can I filter by traffic and referring domains at the same time?",
+    "completion": "Absolutely! Use the sliders for Organic Traffic and Referring Domains in the filter panel to set your desired ranges.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["filter", "traffic", "referring_domains"]
+  },
+  {
+    "id": 17,
+    "prompt": "What is the minimum domain rating I can select?",
+    "completion": "The minimum domain rating is shown on the left end of the Domain Rating slider in the filter panel.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["domain_rating", "filter", "minimum"]
+  },
+  {
+    "id": 18,
+    "prompt": "I want to see only EU websites",
+    "completion": "Filter by country and select 'EU' or specific European countries in the Country (Traffic) filter.",
+    "category": "recommendation",
+    "context": "",
+    "tags": ["country", "EU", "filter"]
+  },
+  {
+    "id": 19,
+    "prompt": "How do I leave feedback?",
+    "completion": "Leave feedback by clicking the 'Feedback' button in the sidebar or visiting '/dashboard/feedback'.",
+    "category": "feedback",
+    "context": "",
+    "tags": ["feedback", "user_feedback"]
+  },
+  {
+    "id": 20,
+    "prompt": "Your recommendations were not helpful",
+    "completion": "Thank you for your feedback. Can you tell me more about what you were looking for? I'll try to improve my suggestions.",
+    "category": "feedback",
+    "context": "User received recommendations",
+    "tags": ["recommendation", "feedback", "improvement"]
+  },
+  {
+    "id": 21,
+    "prompt": "Show me all websites with a spam score below 10",
+    "completion": "Set the Spam Score slider to a maximum of 10 in the filter panel to see those websites.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["spam_score", "filter", "search"]
+  },
+  {
+    "id": 22,
+    "prompt": "How do I navigate to the dashboard?",
+    "completion": "Click the 'Dashboard' link in the main navigation menu or go to '/dashboard'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["dashboard", "navigation", "ui"]
+  },
+  {
+    "id": 23,
+    "prompt": "Can I save my filter settings?",
+    "completion": "Yes, click the 'Save Filter' button at the bottom of the filter panel.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["filter", "save", "settings"]
+  },
+  {
+    "id": 24,
+    "prompt": "What happens if I exclude IPs?",
+    "completion": "Excluding IPs will remove websites from your results that share IP addresses with domains you already own or have purchased.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["exclude", "IPs", "filter"]
+  },
+  {
+    "id": 25,
+    "prompt": "How do I view website details?",
+    "completion": "Click on any website in the list to view its details, metrics, and available options.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["website", "details", "metrics"]
+  },
+  {
+    "id": 26,
+    "prompt": "Can I filter by niche?",
+    "completion": "Yes, use the 'Allowed Niches' filter to select one or more niches for your search.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["niche", "filter", "search"]
+  },
+  {
+    "id": 27,
+    "prompt": "How do I log out?",
+    "completion": "Click your profile icon in the top right corner and select 'Log Out' from the dropdown menu.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["logout", "profile", "navigation"]
+  },
+  {
+    "id": 28,
+    "prompt": "What is the maximum traffic I can filter for?",
+    "completion": "The maximum traffic value is shown on the right end of the Organic Traffic slider. Adjust the slider to set your preferred range.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["traffic", "filter", "maximum"]
+  },
+  {
+    "id": 29,
+    "prompt": "Can I filter by multiple categories?",
+    "completion": "Yes, select as many categories as you like in the Category filter. Your results will update automatically.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["category", "filter", "search"]
+  },
+  {
+    "id": 30,
+    "prompt": "How do I add a new group?",
+    "completion": "Go to '/dashboard/groups' and click 'Add Group'. Enter the group name and save.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["group", "add", "dashboard"]
+  },
+  {
+    "id": 31,
+    "prompt": "I want to see only websites with permanent articles",
+    "completion": "Use the Permanent Article price slider to filter for websites offering permanent articles.",
+    "category": "recommendation",
+    "context": "",
+    "tags": ["permanent_article", "filter", "search"]
+  },
+  {
+    "id": 32,
+    "prompt": "Can I change the language of the interface?",
+    "completion": "Yes, change the language by selecting your preferred option in the Language dropdown in '/dashboard/settings'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["language", "settings", "interface"]
+  },
+  {
+    "id": 33,
+    "prompt": "Can I delete a website from my account?",
+    "completion": "Yes, go to '/dashboard/websites', select the website you want to delete, and click the 'Delete' button.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["website", "delete", "account"]
+  },
+  {
+    "id": 34,
+    "prompt": "How do I update my profile information?",
+    "completion": "To update your profile, visit '/dashboard/settings/profile' and edit your details.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["profile", "update", "settings"]
+  },
+  {
+    "id": 35,
+    "prompt": "What payment methods do you accept?",
+    "completion": "We accept credit cards, PayPal, and bank transfers. You can manage payment options at '/dashboard/billing'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["payment", "methods", "billing"]
+  },
+  {
+    "id": 36,
+    "prompt": "Can I get a refund?",
+    "completion": "Refunds are available within 30 days of purchase. Please contact support via '/dashboard/help' for assistance.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["refund", "support", "purchase"]
+  },
+  {
+    "id": 37,
+    "prompt": "How do I change my password?",
+    "completion": "Go to '/dashboard/settings/security' and select 'Change Password'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["password", "change", "security"]
+  },
+  {
+    "id": 38,
+    "prompt": "Can I view my billing history?",
+    "completion": "Yes, your billing history is available at '/dashboard/billing/history'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["billing", "history", "payments"]
+  },
+  {
+    "id": 39,
+    "prompt": "How do I contact the admin?",
+    "completion": "You can contact the admin by sending a message through '/dashboard/help' or emailing admin@example.com.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["admin", "contact", "support"]
+  },
+  {
+    "id": 40,
+    "prompt": "Can I set up two-factor authentication?",
+    "completion": "Yes, enable two-factor authentication in '/dashboard/settings/security'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["security", "2FA", "settings"]
+  },
+  {
+    "id": 41,
+    "prompt": "How do I view notifications?",
+    "completion": "Notifications are shown in the bell icon at the top right or at '/dashboard/notifications'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["notifications", "dashboard", "alerts"]
+  },
+  {
+    "id": 42,
+    "prompt": "Can I customize my dashboard layout?",
+    "completion": "Yes, you can customize your dashboard by dragging and dropping widgets at '/dashboard'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["dashboard", "customize", "widgets"]
+  },
+  {
+    "id": 43,
+    "prompt": "How do I invite a team member?",
+    "completion": "Invite team members by going to '/dashboard/team' and clicking 'Invite Member'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["team", "invite", "collaboration"]
+  },
+  {
+    "id": 44,
+    "prompt": "Can I set up email alerts for new orders?",
+    "completion": "Yes, configure email alerts in '/dashboard/settings/notifications'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["email", "alerts", "orders"]
+  },
+  {
+    "id": 45,
+    "prompt": "How do I access API documentation?",
+    "completion": "API documentation is available at '/dashboard/api/docs'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["API", "documentation", "developer"]
+  },
+  {
+    "id": 46,
+    "prompt": "Can I change my subscription plan?",
+    "completion": "Change your subscription plan at '/dashboard/billing/subscription'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["subscription", "plan", "billing"]
+  },
+  {
+    "id": 47,
+    "prompt": "How do I report a bug?",
+    "completion": "Report bugs by clicking 'Report Issue' in the sidebar or visiting '/dashboard/help/bug'.",
+    "category": "feedback",
+    "context": "",
+    "tags": ["bug", "report", "issue"]
+  },
+  {
+    "id": 48,
+    "prompt": "Can I get a demo of the platform?",
+    "completion": "Request a demo by filling out the form at '/dashboard/demo'.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["demo", "request", "platform"]
+  },
+  {
+    "id": 49,
+    "prompt": "How do I view analytics for my websites?",
+    "completion": "View website analytics at '/dashboard/websites/analytics'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["analytics", "websites", "dashboard"]
+  },
+  {
+    "id": 50,
+    "prompt": "Can I set up custom filters?",
+    "completion": "Yes, create and save custom filters in the filter panel or at '/dashboard/filters'.",
+    "category": "FAQ",
+    "context": "",
+    "tags": ["filters", "custom", "search"]
+  },
+  {
+    "id": 51,
+    "prompt": "How do I access the help center?",
+    "completion": "Access the help center at '/dashboard/help'.",
+    "category": "navigation",
+    "context": "",
+    "tags": ["help", "support", "center"]
+  },
+  {
+    "id": 52,
+    "prompt": "Can I undo a recent action?",
+    "completion": "Some actions can be undone. Check for an 'Undo' button or visit '/dashboard/activity' to review recent actions.",
+    "category": "customer_support",
+    "context": "",
+    "tags": ["undo", "activity", "actions"]
+  },
+
+  {
+    "id": 53,
+
+    "prompt": "How do I clear my cart?",
+
+    "completion": "Go to the Cart page and click 'Clear Cart' or remove items individually. This won't affect completed orders.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "cart_management", "commerce"]
+  },
+
+  {
+    "id": 54,
+
+    "prompt": "How do I troubleshoot login issues?",
+
+    "completion": "If you can't log in, check your email and password, ensure your account is activated, and try resetting your password. If the problem persists, contact support via the help menu.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "login", "troubleshooting"]
+  },
+
+  {
+    "id": 55,
+
+    "prompt": "How do I enable two-factor authentication?",
+
+    "completion": "Go to 'Account Settings' > 'Security' and follow the instructions to enable two-factor authentication for added security.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "security", "account_settings"]
+  },
+
+  {
+    "id": 56,
+
+    "prompt": "How do I onboard a new project?",
+
+    "completion": "Click 'Add Website' in the Projects section, fill in the required details, and follow the onboarding steps to set up your project for link building.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "project_setup", "onboarding"]
+  },
+
+  {
+    "id": 57,
+
+    "prompt": "What should I do if my payment fails?",
+
+    "completion": "If your payment fails, check your card details, ensure sufficient funds, or try a different payment method. For unresolved issues, contact support.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "payment", "commerce"]
+  },
+
+  {
+    "id": 58,
+
+    "prompt": "How do I update my billing information?",
+
+    "completion": "Go to 'Account Settings' > 'Billing' to update your payment methods and billing address.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "billing", "account_settings"]
+  },
+
+  {
+    "id": 59,
+
+    "prompt": "How do I delete my account?",
+
+    "completion": "To delete your account, go to 'Account Settings' > 'Security' and follow the account deletion process. Note: This action is irreversible.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "account_deletion", "security"]
+  },
+
+  {
+    "id": 60,
+
+    "prompt": "How do I reset my password?",
+
+    "completion": "Click 'Forgot Password' on the login page and follow the instructions sent to your email to reset your password.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "password_reset", "account_recovery"]
+  },
+
+  {
+    "id": 61,
+
+    "prompt": "How do I use advanced filters in the Link Portfolio?",
+
+    "completion": "In the Link Portfolio, click 'Advanced Filters' to access more granular filtering options such as language, location, and publisher type.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "filtering", "link_portfolio"]
+  },
+
+  {
+    "id": 62,
+
+    "prompt": "How do I get notified about new link opportunities?",
+
+    "completion": "Enable notifications in 'Account Settings' > 'Notifications' to receive alerts about new link opportunities and platform updates.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "notifications", "alerts"]
+  },
+
+  {
+    "id": 63,
+
+    "prompt": "How do I report a bug or issue?",
+
+    "completion": "Use the chatbot or go to 'Support' in Account Settings to report bugs or issues. Provide as much detail as possible for faster resolution.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "bug_report", "support"]
+  },
+
+  {
+    "id": 64,
+
+    "prompt": "How do I access API documentation?",
+
+    "completion": "API documentation is available in the 'Docs' section of the platform or by contacting support for developer access.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "api", "documentation"]
+  },
+
+  {
+    "id": 65,
+
+    "prompt": "How do I change the platform language?",
+
+    "completion": "Go to 'Account Settings' > 'Preferences' and select your preferred language from the available options.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "language", "preferences"]
+  },
+
+  {
+    "id": 66,
+
+    "prompt": "How do I view platform updates and changelog?",
+
+    "completion": "Check the 'Changelog' section in the main menu or visit the documentation folder for the latest platform updates.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "changelog", "updates"]
+  },
+
+  {
+    "id": 67,
+
+    "prompt": "How do I use the calendar for scheduling?",
+
+    "completion": "The calendar in the Dashboard allows you to schedule link placements and content deadlines. Click on a date to add or view scheduled activities.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "calendar", "scheduling"]
+  },
+
+  {
+    "id": 68,
+
+    "prompt": "How do I request a feature?",
+
+    "completion": "Submit feature requests via the chatbot or through the 'Support' section in Account Settings. Your feedback helps us improve the platform.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "feature_request", "feedback"]
+  },
+
+  {
+    "id": 69,
+
+    "prompt": "How do I access the dashboard?",
+
+    "completion": "You can access the dashboard from the sidebar menu under 'DASHBOARDS' > 'Overview'. It provides an overview of your links, statistics, and recent activity.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "dashboard", "page_navigation"]
+  },
+
+  {
+    "id": 70,
+
+    "prompt": "What is the Link Portfolio?",
+
+    "completion": "The Link Portfolio is where you can browse and purchase backlinks. Access it from the sidebar under 'GET JUICE' > 'Link Portfolio'. Here you can filter links by price, domain authority, and other criteria.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "link_portfolio", "page_navigation"]
+  },
+
+  {
+    "id": 71,
+
+    "prompt": "How do I view my orders?",
+
+    "completion": "Go to the sidebar and click on 'ORDERS' to view all your current and past orders. You can see order status, items, and manage your purchases there.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "orders", "page_navigation"]
+  },
+
+  {
+    "id": 72,
+
+    "prompt": "Where can I see my purchased links?",
+
+    "completion": "Your purchased links are available under 'LINK CHECKER' > 'Your Links & Statuses' in the sidebar. This shows all your active links and their current status.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "link_checker", "page_navigation"]
+  },
+
+  {
+    "id": 73,
+
+    "prompt": "What is the Competitor Analyzer?",
+
+    "completion": "The Competitor Analyzer helps you analyze your competitors' backlink profiles. Access it from 'DASHBOARDS' > 'Competitor Analyzer'. It shows competitor backlinks, domain authority, and link opportunities.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "competitor_analysis", "analytics"]
+  },
+
+  {
+    "id": 74,
+
+    "prompt": "How do link suggestions work?",
+
+    "completion": "Link suggestions are automatically generated opportunities for backlinks. You can find them in 'GET JUICE' > 'Link Suggestions'. Add them to your cart and purchase them to improve your SEO.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "link_suggestions", "seo"]
+  },
+
+  {
+    "id": 75,
+
+    "prompt": "What is the Cart for?",
+
+    "completion": "The Cart allows you to collect link suggestions and prepare them for purchase. Access it from the sidebar 'CART' menu. You can review items, adjust quantities, and proceed to checkout.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "cart", "commerce"]
+  },
+
+  {
+    "id": 76,
+
+    "prompt": "How do I buy links?",
+
+    "completion": "1. Browse the Link Portfolio or Link Suggestions. 2. Click 'Add to Cart' on desired links. 3. Go to Cart and review your selections. 4. Click 'Checkout' and complete payment. 5. Monitor your orders in the Orders section.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "purchasing", "commerce"]
+  },
+
+  {
+    "id": 77,
+
+    "prompt": "How do I renew my links?",
+
+    "completion": "Go to 'LINK CHECKER' > 'Renewals' in the sidebar. Here you can see links that are expiring soon and renew them to maintain your backlink profile.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "link_renewal", "commerce"]
+  },
+
+  {
+    "id": 78,
+
+    "prompt": "What is the Content Hub?",
+
+    "completion": "The Content Hub is where you can request custom content for your backlinks. Access it from the sidebar 'CONTENT HUB'. You can submit content requests, review drafts, and approve final content.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "content_hub", "content_creation"]
+  },
+
+  {
+    "id": 79,
+
+    "prompt": "How do I add my own website?",
+
+    "completion": "Go to 'PROJECTS' in the sidebar, then click 'Add Website'. Fill in your website details including URL, niche, and target keywords. This allows the platform to suggest relevant backlinks.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "website_management", "project_setup"]
+  },
+
+  {
+    "id": 80,
+
+    "prompt": "What are owned websites?",
+
+    "completion": "Owned websites are the domains you manage and want to build backlinks for. You can view and manage them in the 'PROJECTS' section of the sidebar.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "website_management", "projects"]
+  },
+
+  {
+    "id": 81,
+
+    "prompt": "How do I check link status?",
+
+    "completion": "Visit 'LINK CHECKER' > 'Your Links & Statuses'. This page shows all your purchased links with their current status (active, pending, broken, etc.) and last check dates.",
+
+    "category": "monitoring",
+
+    "context": "",
+
+    "tags": ["ui", "link_status", "monitoring"]
+  },
+
+  {
+    "id": 82,
+
+    "prompt": "What is Link Steal?",
+
+    "completion": "Link Steal allows you to identify and potentially acquire backlinks from competitors. Access it from 'GET JUICE' > 'Link Steal' in the sidebar.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "link_steal", "competitor_analysis"]
+  },
+
+  {
+    "id": 83,
+
+    "prompt": "How do I use the Wish List?",
+
+    "completion": "The Wish List lets you save link opportunities for later. When browsing links, click the heart icon to add to wishlist. Access your saved items from the 'WISH LIST' in the sidebar.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "wishlist", "link_management"]
+  },
+
+  {
+    "id": 84,
+
+    "prompt": "What is Juice Flow?",
+
+    "completion": "Juice Flow visualizes the flow of link equity through your backlink network. Access it from 'DASHBOARDS' > 'External JuiceFlow' to see how authority flows between domains.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "juice_flow", "analytics"]
+  },
+
+  {
+    "id": 85,
+
+    "prompt": "How do I update my account settings?",
+
+    "completion": "Click on your avatar in the top right, then select 'Account Settings'. Here you can update your profile, billing information, and notification preferences.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "account_settings", "profile"]
+  },
+
+  {
+    "id": 86,
+
+    "prompt": "Where can I find my invoices?",
+
+    "completion": "Go to 'Account Settings' > 'Invoices' or directly to 'INVOICES' in the sidebar. You can view, download, and manage all your billing history there.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "invoices", "billing"]
+  },
+
+  {
+    "id": 87,
+
+    "prompt": "How do I contact support?",
+
+    "completion": "You can reach support through the chatbot in the bottom right corner, or by going to 'Account Settings' > 'Support'. For urgent issues, use the help menu.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "support", "contact"]
+  },
+
+  {
+    "id": 88,
+
+    "prompt": "What payment methods are accepted?",
+
+    "completion": "During checkout, you can pay with credit card, PayPal, or bank transfer depending on your account settings. Contact support for specific payment options.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "payment_methods", "commerce"]
+  },
+
+  {
+    "id": 89,
+
+    "prompt": "How do I cancel an order?",
+
+    "completion": "Go to 'ORDERS' and find the order you want to cancel. If it's still pending, you may be able to cancel it. For active orders, contact support for assistance.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "order_cancellation", "commerce"]
+  },
+
+  {
+    "id": 90,
+
+    "prompt": "What is domain authority?",
+
+    "completion": "Domain Authority (DA) is a metric that predicts how well a website will rank on search engines. Higher DA domains provide more valuable backlinks. You can filter by DA in the Link Portfolio.",
+
+    "category": "education",
+
+    "context": "",
+
+    "tags": ["education", "domain_authority", "seo"]
+  },
+
+  {
+    "id": 91,
+
+    "prompt": "How long does link placement take?",
+
+    "completion": "Link placement time varies by publisher and link type. Most links are placed within 2-4 weeks, but premium placements may take longer. You can track progress in your Orders.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "link_placement", "commerce"]
+  },
+
+  {
+    "id": 92,
+
+    "prompt": "What if a link goes down?",
+
+    "completion": "If a purchased link becomes unavailable, our system will detect it during regular checks. You'll be notified, and we may provide a replacement link or refund depending on the circumstances.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "link_monitoring", "support"]
+  },
+
+  {
+    "id": 93,
+
+    "prompt": "How do I filter links in the portfolio?",
+
+    "completion": "In the Link Portfolio, use the filter options on the left sidebar. You can filter by price range, domain authority, niche, anchor type, and more to find the perfect links.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "filtering", "link_portfolio"]
+  },
+
+  {
+    "id": 94,
+
+    "prompt": "What are anchor types?",
+
+    "completion": "Anchor types refer to how your link text appears. Options include exact match (your keyword), partial match, branded, or generic. Choose based on your SEO strategy.",
+
+    "category": "education",
+
+    "context": "",
+
+    "tags": ["education", "anchor_text", "seo"]
+  },
+
+  {
+    "id": 95,
+
+    "prompt": "How do I view analytics?",
+
+    "completion": "The main Dashboard provides key analytics including link growth, domain authority changes, and traffic metrics. For detailed reports, check individual project dashboards.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "analytics", "dashboard"]
+  },
+
+  {
+    "id": 96,
+
+    "prompt": "What is the difference between suggested and portfolio links?",
+
+    "completion": "Portfolio links are available inventory from publishers. Suggested links are AI-generated opportunities based on your website's profile and competitors.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["education", "link_types", "ai"]
+  },
+
+  {
+    "id": 97,
+
+    "prompt": "How do I manage multiple websites?",
+
+    "completion": "Add all your websites in the 'PROJECTS' section. You can switch between them using the website selector in the top navigation or group them for easier management.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "website_management", "projects"]
+  },
+
+  {
+    "id": 98,
+
+    "prompt": "What are contact persons?",
+
+    "completion": "Contact persons are the points of contact for your websites. Manage them in 'CONTACT PERSONS' to ensure proper communication for link placements.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "contact_management", "projects"]
+  },
+
+  {
+    "id": 99,
+
+    "prompt": "How do I export my data?",
+
+    "completion": "Most tables have an export button (usually a download icon). You can export link lists, orders, and analytics data in CSV or Excel format.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "data_export", "reporting"]
+  },
+
+  {
+    "id": 100,
+
+    "prompt": "What is the pricing model?",
+
+    "completion": "Pricing varies by link quality, domain authority, and placement type. Browse the Link Portfolio to see current prices. Higher quality links cost more but provide better SEO value.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["education", "pricing", "commerce"]
+  },
+
+  {
+    "id": 101,
+
+    "prompt": "How do I track my SEO progress?",
+
+    "completion": "Use the Dashboard to monitor key metrics like domain authority growth, new backlinks acquired, and ranking improvements. Set up regular reports for detailed tracking.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "seo_tracking", "analytics"]
+  },
+
+  {
+    "id": 102,
+
+    "prompt": "What if I need custom content?",
+
+    "completion": "Use the Content Hub to request custom-written content for your backlinks. Specify your requirements, target keywords, and any special instructions for the writers.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "content_hub", "content_request"]
+  },
+
+  {
+    "id": 103,
+
+    "prompt": "How do I use the calendar view?",
+
+    "completion": "The calendar in the Dashboard shows your link placements and publishing dates. Click on dates to see scheduled activities and track upcoming placements.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "calendar", "scheduling"]
+  },
+
+  {
+    "id": 104,
+
+    "prompt": "What are tags used for?",
+
+    "completion": "Tags help you organize and categorize your links, websites, and orders. Create custom tags in the Tags section and apply them for better organization and filtering.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "tagging", "organization"]
+  },
+
+  {
+    "id": 105,
+
+    "prompt": "How do I set up notifications?",
+
+    "completion": "Go to 'Account Settings' > 'Notifications' to configure email and in-app notifications for orders, link status changes, and important updates.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "notifications", "settings"]
+  },
+
+  {
+    "id": 106,
+
+    "prompt": "What is the minimum order amount?",
+
+    "completion": "There is no minimum order amount. You can purchase a single link or build large campaigns. However, some publishers may have minimum requirements.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["education", "minimum_order", "commerce"]
+  },
+
+  {
+    "id": 107,
+
+    "prompt": "How do I find links in my niche?",
+
+    "completion": "Use the niche filter in the Link Portfolio. Select your industry or topic to see relevant publishers. You can also search by keywords related to your niche.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "niche_filtering", "link_search"]
+  },
+
+  {
+    "id": 108,
+
+    "prompt": "What happens after I place an order?",
+
+    "completion": "After ordering, the publisher receives your request. They'll prepare the content and place the link. You'll receive updates via email and can track progress in Orders.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "order_process", "commerce"]
+  },
+
+  {
+    "id": 109,
+
+    "prompt": "How do I change my password?",
+
+    "completion": "Click your avatar > 'Account Settings' > 'Security'. There you can change your password and manage other security settings.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "password_change", "security"]
+  },
+
+  {
+    "id": 110,
+
+    "prompt": "What is the refund policy?",
+
+    "completion": "Refunds are available for failed link placements or if links go down within the guarantee period. Contact support to discuss your specific situation.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["policy", "refunds", "commerce"]
+  },
+
+  {
+    "id": 111,
+
+    "prompt": "How do I add team members?",
+
+    "completion": "If you have a team plan, go to 'Account Settings' > 'Team Management' to invite new members and assign roles and permissions.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "team_management", "collaboration"]
+  },
+
+  {
+    "id": 112,
+
+    "prompt": "What browsers are supported?",
+
+    "completion": "The platform works best with modern browsers like Chrome, Firefox, Safari, and Edge. Make sure your browser is updated for the best experience.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["technical", "browser_support", "compatibility"]
+  },
+
+  {
+    "id": 113,
+
+    "prompt": "How do I view my account balance?",
+
+    "completion": "Your account balance is displayed in the top navigation bar. You can also view detailed billing history in 'Account Settings' > 'Billing'.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "account_balance", "billing"]
+  },
+
+  {
+    "id": 114,
+
+    "prompt": "What is the Link Checker?",
+
+    "completion": "The Link Checker monitors the status of all your purchased links. It checks for broken links, updates status, and alerts you to any issues with your backlinks.",
+
+    "category": "monitoring",
+
+    "context": "",
+
+    "tags": ["ui", "link_checker", "monitoring"]
+  },
+
+  {
+    "id": 115,
+
+    "prompt": "How do I create a new project?",
+
+    "completion": "In the Projects section, click 'Add New Project'. Enter your project details including target keywords, competitors, and goals to get personalized link suggestions.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "project_creation", "setup"]
+  },
+
+  {
+    "id": 116,
+
+    "prompt": "What are saved filters?",
+
+    "completion": "Saved filters allow you to save your favorite filter combinations in the Link Portfolio. Access them quickly without re-applying the same filters each time.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "filters", "productivity"]
+  },
+
+  {
+    "id": 117,
+
+    "prompt": "How do I use the competitor analysis?",
+
+    "completion": "Enter a competitor's domain in the Competitor Analyzer. It will show their backlink profile, top linking domains, and anchor text distribution to help you identify opportunities.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "competitor_analysis", "analytics"]
+  },
+
+  {
+    "id": 118,
+
+    "prompt": "What is the juice meter?",
+
+    "completion": "The juice meter visualizes the SEO value (link equity) of different domains. Higher juice indicates more valuable backlinks for your SEO efforts.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "juice_meter", "analytics"]
+  },
+
+  {
+    "id": 119,
+
+    "prompt": "How do I request custom content?",
+
+    "completion": "In the Content Hub, click 'New Request'. Specify the topic, keywords, word count, and any special requirements. Our writers will create content tailored to your needs.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "content_request", "content_hub"]
+  },
+
+  {
+    "id": 120,
+
+    "prompt": "What are promo codes?",
+
+    "completion": "Promo codes provide discounts on link purchases. You can enter them during checkout. Check the Promotions section or contact support for current offers.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "promo_codes", "discounts"]
+  },
+
+  {
+    "id": 121,
+
+    "prompt": "How do I view my link history?",
+
+    "completion": "Your complete link history is available in 'LINK CHECKER' > 'Link History'. This shows all links you've purchased, their performance, and status over time.",
+
+    "category": "monitoring",
+
+    "context": "",
+
+    "tags": ["ui", "link_history", "monitoring"]
+  },
+
+  {
+    "id": 122,
+
+    "prompt": "What is the dashboard calendar?",
+
+    "completion": "The dashboard calendar shows your scheduled link placements, content deadlines, and important dates. Use it to plan your link building campaigns effectively.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "calendar", "dashboard"]
+  },
+
+  {
+    "id": 123,
+
+    "prompt": "How do I manage my tags?",
+
+    "completion": "Go to the Tags section in the sidebar. Here you can create, edit, and delete tags. Apply tags to organize your links, websites, and orders for better management.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "tag_management", "organization"]
+  },
+
+  {
+    "id": 124,
+
+    "prompt": "What are contact persons used for?",
+
+    "completion": "Contact persons ensure proper communication during link placements. Add contact details for each website so publishers know who to reach out to.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "contact_persons", "communication"]
+  },
+
+  {
+    "id": 125,
+
+    "prompt": "How do I view order details?",
+
+    "completion": "Click on any order in the Orders section to view detailed information including items purchased, status, payment details, and communication history.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "order_details", "commerce"]
+  },
+
+  {
+    "id": 126,
+
+    "prompt": "What is the link comparison tool?",
+
+    "completion": "The link comparison tool allows you to compare different link opportunities side by side. Select multiple links and view their metrics, pricing, and features together.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "link_comparison", "decision_making"]
+  },
+
+  {
+    "id": 127,
+
+    "prompt": "How do I use advanced filtering?",
+
+    "completion": "Click 'Advanced Filters' in the Link Portfolio. You can filter by multiple criteria simultaneously including DA range, price, niche, language, and publisher metrics.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "advanced_filters", "link_search"]
+  },
+
+  {
+    "id": 128,
+
+    "prompt": "What are niches in the platform?",
+
+    "completion": "Niches categorize websites by industry or topic. Use niche filters to find links from publishers in your specific industry for more relevant backlinks.",
+
+    "category": "education",
+
+    "context": "",
+
+    "tags": ["education", "niches", "seo"]
+  },
+
+  {
+    "id": 129,
+
+    "prompt": "How do I track link performance?",
+
+    "completion": "Use the analytics in your Dashboard to track link performance metrics like domain authority growth, new backlinks, and ranking improvements over time.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "link_performance", "analytics"]
+  },
+
+  {
+    "id": 130,
+
+    "prompt": "What is the widget dashboard?",
+
+    "completion": "The widget dashboard allows you to customize your dashboard view with different charts, metrics, and widgets that are most relevant to your link building goals.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "dashboard_widgets", "customization"]
+  },
+
+  {
+    "id": 131,
+
+    "prompt": "How do I manage my wish list?",
+
+    "completion": "Add links to your wish list by clicking the heart icon while browsing. Access your saved links from the Wish List section to review and purchase later.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "wishlist", "link_management"]
+  },
+
+  {
+    "id": 132,
+
+    "prompt": "What are planned dates?",
+
+    "completion": "Planned dates show when your links are scheduled for placement. You can view and manage these dates in the Orders section and calendar view.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "planned_dates", "scheduling"]
+  },
+
+  {
+    "id": 133,
+
+    "prompt": "How do I use the link tree view?",
+
+    "completion": "The link tree visualizes your backlink network structure. It shows how links connect through different domains and helps you understand your link ecosystem.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "link_tree", "analytics"]
+  },
+
+  {
+    "id": 134,
+
+    "prompt": "What is the content editor?",
+
+    "completion": "The content editor allows you to review and edit custom content before it's published. You can make changes, approve drafts, or request revisions from writers.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "content_editor", "content_management"]
+  },
+
+  {
+    "id": 135,
+
+    "prompt": "How do I view my commission history?",
+
+    "completion": "Your commission history is available in 'Account Settings' > 'Commissions'. It shows earnings from referrals and affiliate programs if you're enrolled.",
+
+    "category": "account",
+
+    "context": "",
+
+    "tags": ["ui", "commissions", "earnings"]
+  },
+
+  {
+    "id": 136,
+
+    "prompt": "What are groups in the platform?",
+
+    "completion": "Groups allow you to organize your websites and projects into categories. Create groups to manage multiple related websites together for easier administration.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "groups", "organization"]
+  },
+
+  {
+    "id": 137,
+
+    "prompt": "How do I use the countries map?",
+
+    "completion": "The countries map shows the geographic distribution of your backlinks. Use it to ensure diverse link locations and identify opportunities in new regions.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "countries_map", "analytics"]
+  },
+
+  {
+    "id": 138,
+
+    "prompt": "What is the link sights feature?",
+
+    "completion": "Link Sights provides insights into link opportunities by analyzing competitor backlinks and suggesting similar opportunities for your website.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "link_sights", "competitor_analysis"]
+  },
+
+  {
+    "id": 139,
+
+    "prompt": "How do I manage my keywords?",
+
+    "completion": "Add and manage target keywords in your project settings. The platform uses these keywords to suggest relevant backlink opportunities and content topics.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "keyword_management", "seo"]
+  },
+
+  {
+    "id": 140,
+
+    "prompt": "What are top content suggestions?",
+
+    "completion": "Top content suggestions are AI-generated content ideas based on trending topics in your niche. Use them to create high-value content for link building.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "content_suggestions", "ai"]
+  },
+
+  {
+    "id": 141,
+
+    "prompt": "How do I use the speedometer widget?",
+
+    "completion": "The speedometer widget shows your link building velocity and progress toward your monthly goals. Green indicates good progress, red suggests you need to increase activity.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "speedometer", "analytics"]
+  },
+
+  {
+    "id": 142,
+
+    "prompt": "What is the meta description tool?",
+
+    "completion": "The meta description tool helps you optimize meta descriptions for better click-through rates from search results. It analyzes and suggests improvements.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "meta_description", "seo"]
+  },
+
+  {
+    "id": 143,
+
+    "prompt": "How do I view my notifications?",
+
+    "completion": "Click the bell icon in the top navigation to view your notifications. Here you'll see alerts about orders, link status changes, and platform updates.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "notifications", "alerts"]
+  },
+
+  {
+    "id": 144,
+
+    "prompt": "What are dynamic tags?",
+
+    "completion": "Dynamic tags are automatically generated tags based on link characteristics. They help you quickly identify and filter links by attributes like 'high DA' or 'branded anchor'.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "dynamic_tags", "automation"]
+  },
+
+  {
+    "id": 145,
+
+    "prompt": "How do I use the focus page selector?",
+
+    "completion": "The focus page selector allows you to choose specific pages on your website to target with backlinks. This helps concentrate link equity on your most important pages.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "focus_page", "seo"]
+  },
+
+  {
+    "id": 146,
+
+    "prompt": "What is the anchor type reclassifier?",
+
+    "completion": "The anchor type reclassifier helps you change the anchor text type for existing links. Use it when you want to modify how your links appear on publisher sites.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "anchor_reclassifier", "seo"]
+  },
+
+  {
+    "id": 147,
+
+    "prompt": "How do I view my currency rates?",
+
+    "completion": "Currency rates are displayed during checkout and in your billing settings. The platform supports multiple currencies for international users.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "currency_rates", "international"]
+  },
+
+  {
+    "id": 148,
+
+    "prompt": "What are content lengths?",
+
+    "completion": "Content lengths refer to the word count options available when requesting custom content. Choose the appropriate length based on your link building needs.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["education", "content_length", "content_creation"]
+  },
+
+  {
+    "id": 149,
+
+    "prompt": "How do I use the download file feature?",
+
+    "completion": "The download file feature allows you to export reports, link lists, and analytics data. Look for the download icon in tables and report sections.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "file_download", "export"]
+  },
+
+  {
+    "id": 150,
+
+    "prompt": "What is the step-by-step form?",
+
+    "completion": "The step-by-step form guides you through complex processes like adding a new website or creating a large order. It breaks down the process into manageable steps.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "step_by_step", "onboarding"]
+  },
+
+  {
+    "id": 151,
+
+    "prompt": "How do I use the table actions?",
+
+    "completion": "Table actions provide bulk operations for managing multiple items. Select multiple rows and use the action menu to perform operations like bulk edit or delete.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "table_actions", "bulk_operations"]
+  },
+
+  {
+    "id": 152,
+
+    "prompt": "What are trend icons?",
+
+    "completion": "Trend icons show the direction of your metrics over time. Up arrows indicate improvement, down arrows show decline, helping you track your SEO progress.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "trend_icons", "analytics"]
+  },
+
+  {
+    "id": 153,
+
+    "prompt": "How do I manage my saved filters?",
+
+    "completion": "Create and save filter combinations in the Link Portfolio. Access them from the saved filters dropdown to quickly apply your favorite search criteria.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "saved_filters", "productivity"]
+  },
+
+  {
+    "id": 154,
+
+    "prompt": "What is the URL with protocol tool?",
+
+    "completion": "The URL with protocol tool ensures all your website URLs include the proper http:// or https:// prefix. It helps maintain consistency in your project settings.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "url_protocol", "validation"]
+  },
+
+  {
+    "id": 155,
+
+    "prompt": "How do I use the why button?",
+
+    "completion": "The why button provides explanations for platform features and metrics. Click it next to any confusing element to get detailed information about its purpose.",
+
+    "category": "education",
+
+    "context": "",
+
+    "tags": ["ui", "why_button", "help"]
+  },
+
+  {
+    "id": 156,
+
+    "prompt": "What are collection fields?",
+
+    "completion": "Collection fields are customizable form fields you can add to your website profiles. Use them to track additional information specific to your projects.",
+
+    "category": "setup",
+
+    "context": "",
+
+    "tags": ["ui", "collection_fields", "customization"]
+  },
+
+  {
+    "id": 157,
+
+    "prompt": "How do I view my progress?",
+
+    "completion": "The progress component shows completion status for various tasks. Use it to track order fulfillment, content creation, and other multi-step processes.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "progress_tracking", "tasks"]
+  },
+
+  {
+    "id": 158,
+
+    "prompt": "What is the countdown timer?",
+
+    "completion": "The countdown timer shows time remaining for important events like link placements, renewals, or special offers. It helps you stay on top of deadlines.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "countdown_timer", "deadlines"]
+  },
+
+  {
+    "id": 159,
+
+    "prompt": "How do I use the custom tool tip?",
+
+    "completion": "Custom tooltips provide additional information when you hover over elements. They explain features, metrics, and provide helpful tips throughout the platform.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "tooltips", "help"]
+  },
+
+  {
+    "id": 160,
+
+    "prompt": "What are status icons?",
+
+    "completion": "Status icons visually represent the state of your links, orders, and other items. Green indicates active/healthy, red indicates issues, yellow indicates pending.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "status_icons", "visual_indicators"]
+  },
+
+  {
+    "id": 161,
+
+    "prompt": "How do I use the price renderer?",
+
+    "completion": "The price renderer formats and displays prices consistently across the platform. It handles currency conversion and shows pricing in your preferred format.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "price_renderer", "commerce"]
+  },
+
+  {
+    "id": 162,
+
+    "prompt": "What is the price sign adder?",
+
+    "completion": "The price sign adder ensures currency symbols are properly displayed with prices. It automatically adds the correct symbol based on your selected currency.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "price_sign", "commerce"]
+  },
+
+  {
+    "id": 163,
+
+    "prompt": "How do I use the price currency component?",
+
+    "completion": "The price currency component displays prices with proper formatting and currency symbols. It automatically updates based on your account currency settings.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "price_currency", "commerce"]
+  },
+
+  {
+    "id": 164,
+
+    "prompt": "What are chart icons?",
+
+    "completion": "Chart icons represent different types of data visualizations available in your dashboard. Each icon corresponds to a specific chart type for displaying your metrics.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "chart_icons", "analytics"]
+  },
+
+  {
+    "id": 165,
+
+    "prompt": "How do I use the chart card?",
+
+    "completion": "Chart cards display your key metrics in visual format. You can customize which metrics appear on your dashboard and how they're visualized.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "chart_cards", "analytics"]
+  },
+
+  {
+    "id": 166,
+
+    "prompt": "What is the main chart header?",
+
+    "completion": "The main chart header provides context and controls for your dashboard charts. It includes date ranges, metric selectors, and chart type options.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "chart_header", "analytics"]
+  },
+
+  {
+    "id": 167,
+
+    "prompt": "How do I use the stat card?",
+
+    "completion": "Stat cards show key performance indicators at a glance. They display metrics like total links, domain authority, and monthly growth in easy-to-read format.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "stat_cards", "analytics"]
+  },
+
+  {
+    "id": 168,
+
+    "prompt": "What are alerts in the platform?",
+
+    "completion": "Alerts notify you of important events like link failures, payment issues, or new opportunities. You can configure which alerts you want to receive.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "alerts", "notifications"]
+  },
+
+  {
+    "id": 169,
+
+    "prompt": "How do I manage my messages?",
+
+    "completion": "The messages section contains communications from publishers, support, and the platform. Use it to stay updated on your orders and account activity.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "messages", "communication"]
+  },
+
+  {
+    "id": 170,
+
+    "prompt": "What is the floating action button?",
+
+    "completion": "The floating action button provides quick access to common actions like adding new items or creating requests. It appears as a circular button in the interface.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "fab", "navigation"]
+  },
+
+  {
+    "id": 171,
+
+    "prompt": "How do I use the drawer component?",
+
+    "completion": "Drawers slide out from the side of the screen to show additional content or forms. They provide more space for detailed information without leaving the current page.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "drawers", "navigation"]
+  },
+
+  {
+    "id": 172,
+
+    "prompt": "What are modals in the platform?",
+
+    "completion": "Modals are popup windows that appear over the current content. They're used for forms, confirmations, and detailed information without navigating away.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "modals", "popups"]
+  },
+
+  {
+    "id": 173,
+
+    "prompt": "How do I use the loading component?",
+
+    "completion": "The loading component shows progress indicators while content is being loaded. It keeps users informed during wait times for better user experience.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "loading", "ux"]
+  },
+
+  {
+    "id": 174,
+
+    "prompt": "What is the content skeleton?",
+
+    "completion": "Content skeletons show placeholder layouts while actual content loads. They improve perceived performance by giving users a preview of the page structure.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "skeletons", "ux"]
+  },
+
+  {
+    "id": 175,
+
+    "prompt": "How do I use the icon title component?",
+
+    "completion": "Icon titles combine icons with text to create visually appealing headers. They help organize content and make sections easier to identify.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "icon_titles", "design"]
+  },
+
+  {
+    "id": 176,
+
+    "prompt": "What is the default layout helmet?",
+
+    "completion": "The default layout helmet manages page metadata like titles and descriptions. It ensures proper SEO and social media sharing for each page.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["technical", "metadata", "seo"]
+  },
+
+  {
+    "id": 177,
+
+    "prompt": "How do I use the custom tag component?",
+
+    "completion": "Custom tags allow you to create and apply labels to organize your content. They're fully customizable and help with filtering and categorization.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "custom_tags", "organization"]
+  },
+
+  {
+    "id": 178,
+
+    "prompt": "What are editable table columns?",
+
+    "completion": "Editable table columns allow you to modify data directly in tables. Click on cells to edit values without opening separate forms.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "editable_tables", "data_entry"]
+  },
+
+  {
+    "id": 179,
+
+    "prompt": "How do I use the filters displayer?",
+
+    "completion": "The filters displayer shows all active filters and allows you to modify or remove them. It helps you understand what criteria are currently applied to your searches.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "filters_displayer", "search"]
+  },
+
+  {
+    "id": 180,
+
+    "prompt": "What is the insufficient balance component?",
+
+    "completion": "The insufficient balance component appears when you don't have enough funds for a purchase. It guides you to add funds or choose a different payment method.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "insufficient_balance", "commerce"]
+  },
+
+  {
+    "id": 181,
+
+    "prompt": "How do I use the checkout form?",
+
+    "completion": "The checkout form collects payment and billing information. Fill in your details, select payment method, and review your order before completing the purchase.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "checkout", "commerce"]
+  },
+
+  {
+    "id": 182,
+
+    "prompt": "What is the checkout summary?",
+
+    "completion": "The checkout summary shows a breakdown of your order including items, quantities, prices, and total cost. Review it carefully before completing payment.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "checkout_summary", "commerce"]
+  },
+
+  {
+    "id": 183,
+
+    "prompt": "How do I use the checkout alert?",
+
+    "completion": "Checkout alerts notify you of important information during the payment process, such as minimum orders or special conditions for certain links.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "checkout_alerts", "commerce"]
+  },
+
+  {
+    "id": 184,
+
+    "prompt": "What is the checkout loading component?",
+
+    "completion": "The checkout loading component shows progress during payment processing. It keeps you informed while your transaction is being completed.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "checkout_loading", "commerce"]
+  },
+
+  {
+    "id": 185,
+
+    "prompt": "How do I use the card payment form?",
+
+    "completion": "The card payment form securely collects your credit card information. Enter your card details, billing address, and complete the payment.",
+
+    "category": "commerce",
+
+    "context": "",
+
+    "tags": ["ui", "card_payment", "commerce"]
+  },
+
+  {
+    "id": 186,
+
+    "prompt": "What are landing pages?",
+
+    "completion": "Landing pages are dedicated pages for specific campaigns or offers. You can create and manage them to direct traffic from your backlinks.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "landing_pages", "marketing"]
+  },
+
+  {
+    "id": 187,
+
+    "prompt": "How do I use the mobile view alert?",
+
+    "completion": "The mobile view alert notifies you when viewing the platform on mobile devices. Some features may have limited functionality on smaller screens.",
+
+    "category": "support",
+
+    "context": "",
+
+    "tags": ["ui", "mobile_view", "compatibility"]
+  },
+
+  {
+    "id": 188,
+
+    "prompt": "What is the Pac-Man component?",
+
+    "completion": "The Pac-Man component is a fun loading animation that appears during certain processes. It provides visual feedback while operations complete.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "pacman", "loading_animation"]
+  },
+
+  {
+    "id": 189,
+
+    "prompt": "How do I use the YouTube card?",
+
+    "completion": "YouTube cards display video content within the platform. They can be used for tutorials, explanations, or promotional content.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "youtube_cards", "video"]
+  },
+
+  {
+    "id": 190,
+
+    "prompt": "What is the tree legend?",
+
+    "completion": "The tree legend explains the symbols and colors used in link tree visualizations. It helps you understand the different types of connections in your backlink network.",
+
+    "category": "analytics",
+
+    "context": "",
+
+    "tags": ["ui", "tree_legend", "analytics"]
+  },
+
+  {
+    "id": 191,
+
+    "prompt": "How do I use the SVG icon component?",
+
+    "completion": "SVG icons provide scalable, crisp graphics throughout the platform. They're used for buttons, navigation, and visual elements.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["ui", "svg_icons", "design"]
+  },
+
+  {
+    "id": 192,
+
+    "prompt": "What are core components?",
+
+    "completion": "Core components are the fundamental building blocks of the platform's interface. They include buttons, inputs, and other basic UI elements.",
+
+    "category": "features",
+
+    "context": "",
+
+    "tags": ["technical", "core_components", "ui"]
+  },
+
+  {
+    "id": 193,
+
+    "prompt": "How do I use the nav header?",
+
+    "completion": "The nav header contains the main navigation elements including the logo, menu, search, and user account options.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "nav_header", "navigation"]
+  },
+
+  {
+    "id": 194,
+
+    "prompt": "What is the sidebar component?",
+
+    "completion": "The sidebar contains the main navigation menu with links to all platform sections. It can be collapsed or expanded for better screen usage.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "sidebar", "navigation"]
+  },
+
+  {
+    "id": 195,
+
+    "prompt": "How do I use the side bar?",
+
+    "completion": "The side bar provides quick access to all platform features. Click menu items to navigate or use the search to find specific sections.",
+
+    "category": "navigation",
+
+    "context": "",
+
+    "tags": ["ui", "sidebar", "navigation"]
+  },
+
+  {
+    "id": 196,
+
+    "prompt": "How do I create a new account?",
+
+    "completion": "Visit our signup page at [website]/signup, enter your email, create a password, and click 'Create Account'. You'll receive a verification email - click the link to activate your account.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "account_creation", "signup"]
+  },
+
+  {
+    "id": 197,
+
+    "prompt": "I forgot my password. How can I reset it?",
+
+    "completion": "Click 'Forgot Password' on the login page, enter your email, and we'll send you a password reset link. The link expires in 2 hours for security.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "password_reset", "account_recovery"]
+  },
+
+  {
+    "id": 198,
+
+    "prompt": "How do I change my account email address?",
+
+    "completion": "Go to Account Settings > Profile. Click 'Change Email', enter your new email and password to confirm. You'll receive a verification email to complete the change.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "email_change", "account_settings"]
+  },
+
+  {
+    "id": 199,
+
+    "prompt": "How can I enable two-factor authentication?",
+
+    "completion": "In Account Settings > Security, click 'Enable 2FA'. Scan the QR code with an authenticator app like Google Authenticator, then enter the generated code to complete setup.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "2fa", "security"]
+  },
+
+  {
+    "id": 200,
+
+    "prompt": "How do I update my profile picture?",
+
+    "completion": "Click your profile icon > Edit Profile > click on your current picture. You can upload a new image (JPG or PNG, max 5MB). Don't forget to click 'Save'.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "profile_picture", "account_settings"]
+  },
+
+  {
+    "id": 201,
+
+    "prompt": "How do I change my notification preferences?",
+
+    "completion": "Go to Account Settings > Notifications. Toggle the switches for email and in-app notifications for different activities like mentions, comments, and updates.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "notification_preferences", "settings"]
+  },
+
+  {
+    "id": 202,
+
+    "prompt": "Why am I not receiving email notifications?",
+
+    "completion": "First, check your spam/junk folder. Then verify your notification settings in Account Settings > Notifications. Ensure your email address is correct in your profile.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "email_notifications", "troubleshooting"]
+  },
+
+  {
+    "id": 203,
+
+    "prompt": "How do I delete my account?",
+
+    "completion": "Go to Account Settings > Advanced > Delete Account. Be aware this action is permanent and will delete all your data. You'll be asked to confirm your password.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "account_deletion", "security"]
+  },
+
+  {
+    "id": 204,
+
+    "prompt": "Can I change my account type?",
+
+    "completion": "Yes, go to Account Settings > Subscription. Click 'Change Plan' to see available options. Some changes may require payment information.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "account_type", "subscription"]
+  },
+
+  {
+    "id": 205,
+
+    "prompt": "How do I update my timezone?",
+
+    "completion": "Go to Account Settings > Preferences. Select your timezone from the dropdown menu and click 'Save'. This affects due dates and notifications.",
+
+    "category": "Account Management",
+
+    "context": "",
+
+    "tags": ["ui", "timezone", "preferences"]
+  },
+
+  {
+    "id": 206,
+
+    "prompt": "How do I add a new link?",
+
+    "completion": "Click the '+ Add Link' button, paste your URL, add a title and description, then click 'Save'. You can also add tags for better organization.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "add_link", "link_management"]
+  },
+
+  {
+    "id": 207,
+
+    "prompt": "How can I edit multiple links at once?",
+
+    "completion": "Select the checkboxes next to the links you want to edit, then click 'Bulk Edit'. Make your changes and click 'Apply to All' to save.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "bulk_edit", "link_management"]
+  },
+
+  {
+    "id": 208,
+
+    "prompt": "What's the best way to organize my links?",
+
+    "completion": "Use folders and tags. Create folders for broad categories and use tags for more specific grouping. For example, tag links as 'social-media' or 'competitors'.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "link_organization", "productivity"]
+  },
+
+  {
+    "id": 209,
+
+    "prompt": "How do I import links from a CSV file?",
+
+    "completion": "Go to Links > Import > CSV. Download our template, fill in your links, then upload the file. The system will guide you through matching columns.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "csv_import", "data_migration"]
+  },
+
+  {
+    "id": 210,
+
+    "prompt": "Can I share a collection of links with my team?",
+
+    "completion": "Yes, select the links, click 'Share', then choose team members or generate a shareable link. You can set view or edit permissions.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "link_sharing", "collaboration"]
+  },
+
+  {
+    "id": 211,
+
+    "prompt": "How do I find a specific link?",
+
+    "completion": "Use the search bar at the top. You can search by URL, title, or tags. Use quotes for exact matches or filters like 'tag:marketing' to narrow results.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "link_search", "search"]
+  },
+
+  {
+    "id": 212,
+
+    "prompt": "What's the difference between archiving and deleting a link?",
+
+    "completion": "Archiving removes the link from your main view but keeps it in your account. Deletion is permanent. You can find archived links in the 'Archived' section.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "archiving", "link_management"]
+  },
+
+  {
+    "id": 213,
+
+    "prompt": "How do I add notes to a link?",
+
+    "completion": "Open the link details and click 'Add Note'. You can format text, add bullet points, and mention team members with @username.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "link_notes", "collaboration"]
+  },
+
+  {
+    "id": 214,
+
+    "prompt": "Can I set an expiration date for a link?",
+
+    "completion": "Yes, when adding or editing a link, look for the 'Expiration' option. Set a date and the link will be automatically archived on that date.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "link_expiration", "automation"]
+  },
+
+  {
+    "id": 215,
+
+    "prompt": "How do I export my links?",
+
+    "completion": "Go to Links > Export. Choose your format (CSV, Excel, or PDF), select which fields to include, then click 'Export'. You'll receive an email when it's ready.",
+
+    "category": "Link Management",
+
+    "context": "",
+
+    "tags": ["ui", "link_export", "data_export"]
+  },
+
+  {
+    "id": 216,
+
+    "prompt": "How do I create a new project?",
+
+    "completion": "Click 'New Project', enter a name and description, then click 'Create'. You can add team members and set permissions during or after creation.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_creation", "collaboration"]
+  },
+
+  {
+    "id": 217,
+
+    "prompt": "How do I invite team members to a project?",
+
+    "completion": "Open the project, click 'Team' > 'Invite Members'. Enter their email and choose their role (Viewer, Editor, or Admin). They'll receive an email invitation.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "team_invitation", "collaboration"]
+  },
+
+  {
+    "id": 218,
+
+    "prompt": "What's the difference between project roles?",
+
+    "completion": "Viewers can only view content. Editors can add/edit content but can't change settings. Admins have full control, including adding/removing members and changing settings.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["education", "project_roles", "permissions"]
+  },
+
+  {
+    "id": 219,
+
+    "prompt": "How do I organize projects into folders?",
+
+    "completion": "Click 'New' > 'Folder', name it, then drag and drop projects into it. You can create nested folders for better organization.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_organization", "folders"]
+  },
+
+  {
+    "id": 220,
+
+    "prompt": "Can I duplicate a project?",
+
+    "completion": "Yes, open the project, click the three dots menu, and select 'Duplicate'. Choose what to include (tasks, files, etc.) and give it a new name.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_duplication", "productivity"]
+  },
+
+  {
+    "id": 221,
+
+    "prompt": "How do I set a project deadline?",
+
+    "completion": "Open the project, click 'Edit', then set the due date. Team members will be notified as the deadline approaches.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_deadline", "scheduling"]
+  },
+
+  {
+    "id": 222,
+
+    "prompt": "How do I see all my tasks across projects?",
+
+    "completion": "Click 'My Tasks' in the sidebar. You can filter by due date, project, or assignee to find what you need.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "task_management", "dashboard"]
+  },
+
+  {
+    "id": 223,
+
+    "prompt": "Can I customize the project view?",
+
+    "completion": "Yes, switch between list, board, or calendar views using the icons at the top. You can also create custom views with your preferred filters and sorting.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_views", "customization"]
+  },
+
+  {
+    "id": 224,
+
+    "prompt": "How do I archive a completed project?",
+
+    "completion": "Open the project, click the three dots menu, and select 'Archive'. Archived projects are moved to the 'Archived' section where you can restore them if needed.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_archiving", "organization"]
+  },
+
+  {
+    "id": 225,
+
+    "prompt": "How do I track project progress?",
+
+    "completion": "The project dashboard shows overall progress, upcoming deadlines, and task completion rates. You can also set milestones to track key achievements.",
+
+    "category": "Projects & Workspaces",
+
+    "context": "",
+
+    "tags": ["ui", "project_tracking", "analytics"]
+  },
+
+  {
+    "id": 226,
+
+    "prompt": "How do I view my link click statistics?",
+
+    "completion": "Go to Analytics > Links. You'll see a dashboard with total clicks, unique visitors, and other metrics. Use the date picker to adjust the time period.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "click_statistics", "analytics"]
+  },
+
+  {
+    "id": 227,
+
+    "prompt": "What's the difference between clicks and unique visitors?",
+
+    "completion": "'Clicks' counts every time a link is clicked, while 'Unique Visitors' counts each person only once, even if they click multiple times. This helps distinguish between many clicks from one person versus clicks from many people.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["education", "metrics", "analytics"]
+  },
+
+  {
+    "id": 228,
+
+    "prompt": "How do I export my analytics data?",
+
+    "completion": "Go to the report you want to export, click 'Export', then choose your format (CSV, Excel, or PDF). Select the date range and click 'Export'.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "data_export", "reporting"]
+  },
+
+  {
+    "id": 229,
+
+    "prompt": "Can I see which countries my visitors are from?",
+
+    "completion": "Yes, go to Analytics > Locations. The map and table show where your visitors are located, along with click counts per country.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "visitor_locations", "analytics"]
+  },
+
+  {
+    "id": 230,
+
+    "prompt": "How do I track conversions?",
+
+    "completion": "Set up conversion tracking in Settings > Goals. Define what counts as a conversion (like a thank you page visit) and the system will track how many link clicks lead to conversions.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "conversion_tracking", "analytics"]
+  },
+
+  {
+    "id": 231,
+
+    "prompt": "What's a good click-through rate (CTR)?",
+
+    "completion": "Average CTR varies by industry, but 2-5% is typical for most campaigns. Focus on improving your own CTR over time rather than comparing to others.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["education", "ctr", "metrics"]
+  },
+
+  {
+    "id": 232,
+
+    "prompt": "How do I compare performance over time?",
+
+    "completion": "Use the date range comparison tool. Select your main date range, then check 'Compare to previous period' to see percentage changes.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "performance_comparison", "analytics"]
+  },
+
+  {
+    "id": 233,
+
+    "prompt": "Can I see which devices my visitors use?",
+
+    "completion": "Yes, go to Analytics > Devices. You'll see a breakdown of desktop, mobile, and tablet traffic, along with performance metrics for each.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "device_analytics", "analytics"]
+  },
+
+  {
+    "id": 234,
+
+    "prompt": "How do I track UTM parameters?",
+
+    "completion": "Add UTM parameters to your URLs (utm_source, utm_medium, utm_campaign). The system will automatically track them. View the data in Analytics > Campaigns.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "utm_tracking", "analytics"]
+  },
+
+  {
+    "id": 235,
+
+    "prompt": "What's the best way to share reports with my team?",
+
+    "completion": "Use the 'Share' button on any report to generate a link or schedule automatic email reports. You can control whether recipients can edit or just view the report.",
+
+    "category": "Analytics & Reporting",
+
+    "context": "",
+
+    "tags": ["ui", "report_sharing", "collaboration"]
+  },
+
+  {
+    "id": 236,
+
+    "prompt": "How do I update my credit card?",
+
+    "completion": "Go to Billing > Payment Methods. Click 'Add New Card', enter your details, then set it as default. The old card will be kept on file unless you delete it.",
+
+    "category": "Billing & Payments",
+
+    "context": "",
+
+    "tags": ["ui", "credit_card_update", "billing"]
+  },
+
+  {
+    "id": 237,
+
+    "prompt": "Where can I download my invoices?",
+
+    "completion": "Go to Billing > Invoices. Click the download icon next to any invoice to get a PDF. You can also filter by date range or status.",
+
+    "category": "Billing & Payments",
+
+    "context": "",
+
+    "tags": ["ui", "invoice_download", "billing"]
+  },
+
+  {
+    "id": 238,
+
+    "prompt": "How do I change my subscription plan?",
+
+    "completion": "Go to Billing > Plans. Select your desired plan and click 'Change Plan'. The new plan will start at your next billing cycle.",
+
+    "category": "Billing & Payments",
+
+    "context": "",
+
+    "tags": ["ui", "subscription_change", "billing"]
+  },
+
+  {
+    "id": 239,
+
+    "prompt": "What payment methods do you accept?",
+
+    "completion": "We accept all major credit cards (Visa, Mastercard, American Express, Discover) and PayPal. Some regions may have additional options available.",
+
+    "category": "Billing & Payments",
+
+    "context": "",
+
+    "tags": ["ui", "payment_methods", "commerce"]
+  },
+
+  {
+    "id": 240,
+
+    "prompt": "How do I cancel my subscription?",
+
+    "completion": "Go to Billing > Subscription > Cancel Plan. You can choose to cancel immediately or at the end of your billing period. You'll continue to have access until the period ends.",
+
+    "category": "Billing & Payments",
+
+    "context": "",
+
+    "tags": ["ui", "subscription_cancellation", "billing"]
+  },
+
+  {
+    "id": 241,
+
+    "prompt": "Why can't I log in?",
+
+    "completion": "First, check if Caps Lock is on. If you've forgotten your password, use the 'Forgot Password' link. Still having trouble? Try clearing your browser cache or using a different browser.",
+
+    "category": "Troubleshooting",
+
+    "context": "",
+
+    "tags": ["ui", "login_issues", "troubleshooting"]
+  },
+
+  {
+    "id": 242,
+
+    "prompt": "Why aren't my links tracking clicks?",
+
+    "completion": "1) Ensure the link is active and correct 2) Check if the link has been shared yet 3) Some ad blockers may prevent tracking. Try disabling them or test in an incognito window.",
+
+    "category": "Troubleshooting",
+
+    "context": "",
+
+    "tags": ["ui", "click_tracking", "troubleshooting"]
+  },
+
+  {
+    "id": 243,
+
+    "prompt": "Why is my report showing no data?",
+
+    "completion": "Check your date range - it might be set to a period with no activity. Also verify your filters aren't too restrictive. If the issue persists, contact support.",
+
+    "category": "Troubleshooting",
+
+    "context": "",
+
+    "tags": ["ui", "reporting", "troubleshooting"]
+  },
+
+  {
+    "id": 244,
+
+    "prompt": "Why am I getting an 'Access Denied' error?",
+
+    "completion": "This usually means you don't have permission to view the requested content. Check with your team admin to adjust your permissions if needed.",
+
+    "category": "Troubleshooting",
+
+    "context": "",
+
+    "tags": ["ui", "access_denied", "permissions"]
+  },
+
+  {
+    "id": 245,
+
+    "prompt": "Why is the page loading slowly?",
+
+    "completion": "Try refreshing the page. If that doesn't help, check your internet connection. You can also try clearing your browser cache or using a different browser.",
+
+    "category": "Troubleshooting",
+
+    "context": "",
+
+    "tags": ["ui", "page_loading", "performance"]
+  }
+]
