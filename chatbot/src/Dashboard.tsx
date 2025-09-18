@@ -96,7 +96,7 @@ const Dashboard = () => {
 
   const handleSendMessage = async () => {
     if (!sessionReady || inputText.trim() === '') return;
-
+  
     const newUserMessage: Message = {
       id: Date.now(),
       sessionId,
@@ -107,11 +107,11 @@ const Dashboard = () => {
       status: 'sending',
       metadata: {}
     };
-
+  
     setMessages(prev => [...prev, newUserMessage]);
     const messageText = inputText;
     setInputText('');
-
+  
     try {
       // Mark message as delivered
       setMessages(prev =>
@@ -119,40 +119,43 @@ const Dashboard = () => {
           msg.id === newUserMessage.id ? { ...msg, status: 'delivered' } : msg
         )
       );
-
+  
       setIsTyping(true);
       setThinking(true);
-
+  
       // Send message to backend for bot response
-      const botResponse = await axios.post(`http://localhost:3001/api/messages/send`, {
+      const response = await axios.post(`http://localhost:3001/api/messages/send`, {
         sessionId,
-        message: messageText
+        text: messageText
       }, { withCredentials: true });
-
+  
+      // Extract bot message from the response structure
+      const botMessageData = response.data.botMessage;
+  
       // Simulate thinking time for better UX
       setTimeout(() => {
         setIsTyping(false);
         setThinking(false);
-
+  
         const newBotMessage: Message = {
           id: Date.now() + 1,
           sessionId,
-          text: botResponse.data?.text || "Sorry, I couldn't understand that.",
+          text: botMessageData?.text || "Sorry, I couldn't understand that.",
           sender: 'bot',
-          intent: botResponse.data?.intent || 'response',
-          timestamp: new Date(),
+          intent: botMessageData?.intent || 'response',
+          timestamp: new Date(botMessageData?.timestamp || new Date()),
           status: 'read',
-          metadata: botResponse.data?.metadata || {}
+          metadata: botMessageData?.metadata || {}
         };
-
+  
         setMessages(prev => [...prev, newBotMessage]);
       }, 1500); // 1.5 seconds thinking time
-
+  
     } catch (err: any) {
       console.error('Failed to send message:', err);
       setIsTyping(false);
       setThinking(false);
-
+  
       const errorMessage: Message = {
         id: Date.now() + 1,
         sessionId,
@@ -253,7 +256,7 @@ const Dashboard = () => {
 
   // Sample data
   const faqCategories = [ 
-    { title: "Getting Started", questions: [ "How do I create my first cluster?", "How to connect to my Atlas Cluster?", " can I find sample data?" ] }, 
+    { title: "Getting Started", questions: [ "How do I create my first cluster?", "How to connect to my Atlas Cluster?", "Where can I find sample data?" ] }, 
     { title: "Account & Billing", questions: [ "How do I reset my password?", "How to update my payment method?", "What does Basic Support cover?" ] }, 
     { title: "Troubleshooting", questions: [ "How to close connections in Linkbuilder Atlas?", "Why is my cluster slow?", "How to resolve connection issues?" ] } 
   ];
@@ -299,7 +302,7 @@ const Dashboard = () => {
                 </button>
               </div>
             </div>
-  
+            
             <div className="chat-tabs">
               <button 
                 className={`tab ${activeTab === 'chat' ? 'active' : ''}`}
@@ -320,11 +323,11 @@ const Dashboard = () => {
                 Help Topics
               </button>
             </div>
-  
+            
             {activeTab === 'chat' && (
               <>
                 <div className="messages-container">
-                  {messages.length === 0 ? (
+                  {loading ? (
                     <div className="loading-container">
                       <div className="typing-indicator">
                         <span></span>
@@ -368,7 +371,7 @@ const Dashboard = () => {
                           </div>
                         </div>
                       ))}
-  
+                      
                       {isTyping && (
                         <div className="message bot">
                           <div className="message-avatar">
@@ -386,12 +389,12 @@ const Dashboard = () => {
                       )}
                     </>
                   )}
-  
+                  
                   <div ref={messagesEndRef} />
                 </div>
-  
+                
                 {/* Quick Replies */}
-                {!isTyping && messages.length > 0 && (
+                {!isTyping && messages.length > 1 && (
                   <div className="quick-replies">
                     {quickReplies.map((reply, index) => (
                       <button 
@@ -404,37 +407,18 @@ const Dashboard = () => {
                     ))}
                   </div>
                 )}
-  
-                {/* Input Box */}
-                <div className="input-container">
-                  <input
-                    ref={inputRef}
-                    type="text"
-                    value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    placeholder="Type your message here..."
-                    disabled={isTyping}
-                  />
-                  <button 
-                    className="send-btn" 
-                    onClick={handleSendMessage}
-                    disabled={inputText.trim() === '' || isTyping}
-                  >
-                    <FaPaperPlane />
-                  </button>
-                </div>
               </>
             )}
-  
-            {/* Resources Tab */}
+            
             {activeTab === 'resources' && (
               <div className="resources-container">
                 <h4>Recommended Resources</h4>
                 <div className="resources-grid">
                   {learningResources.map((resource, index) => (
                     <div key={index} className="resource-card">
-                      <div className="resource-icon">{resource.icon}</div>
+                      <div className="resource-icon">
+                        {resource.icon}
+                      </div>
                       <h5>{resource.title}</h5>
                       <p>{resource.description}</p>
                       <button className="resource-link">
@@ -443,7 +427,7 @@ const Dashboard = () => {
                     </div>
                   ))}
                 </div>
-  
+                
                 <div className="suggested-resources">
                   <h5>Suggested for you</h5>
                   <div className="resource-list">
@@ -453,7 +437,9 @@ const Dashboard = () => {
                         className={`resource-item ${resource.read ? 'read' : ''}`}
                         onClick={() => markResourceAsRead(resource.id)}
                       >
-                        <div className="resource-type">{renderResourceIcon(resource.type)}</div>
+                        <div className="resource-type">
+                          {renderResourceIcon(resource.type)}
+                        </div>
                         <span>{resource.title}</span>
                         {!resource.read && <div className="unread-indicator"></div>}
                       </div>
@@ -462,8 +448,7 @@ const Dashboard = () => {
                 </div>
               </div>
             )}
-  
-            {/* Help Tab */}
+            
             {activeTab === 'help' && (
               <div className="help-container">
                 <h4>Frequently Asked Questions</h4>
@@ -485,7 +470,7 @@ const Dashboard = () => {
                     </div>
                   ))}
                 </div>
-  
+                
                 <div className="contact-support">
                   <h5>Need more help?</h5>
                   <p>Connect with our support team for personalized assistance</p>
@@ -495,17 +480,36 @@ const Dashboard = () => {
                 </div>
               </div>
             )}
+            
+            {activeTab === 'chat' && (
+              <div className="input-container">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type your message here..."
+                  disabled={isTyping}
+                />
+                <button 
+                  className="send-btn" 
+                  onClick={handleSendMessage}
+                  disabled={inputText.trim() === '' || isTyping}
+                >
+                  <FaPaperPlane />
+                </button>
+              </div>
+            )}
           </div>
         )}
-  
-        {/* Chat toggle button */}
+        
         <button className="chat-toggle" onClick={toggleChat}>
           {isChatOpen ? <FaTimes /> : <FaComments />}
           {!isChatOpen && messages.length > 0 && <span className="notification-badge">{messages.length}</span>}
         </button>
       </div>
-  
-      {/* End Session Modal */}
+      
       {showEndSessionModal && (
         <div className="modal-overlay" onClick={() => setShowEndSessionModal(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -522,11 +526,11 @@ const Dashboard = () => {
                 aria-label="Close modal"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 7.22z" />
+                  <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
                 </svg>
               </button>
             </div>
-  
+            
             <div className="modal-body">
               <p>Ending this session will clear all messages from this conversation. This action cannot be undone.</p>
               <div className="session-info">
@@ -540,7 +544,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-  
+            
             <div className="modal-footer">
               <button 
                 className="btn-secondary"
@@ -552,6 +556,9 @@ const Dashboard = () => {
                 className="btn-primary btn-danger"
                 onClick={handleEndSession}
               >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clipRule="evenodd" />
+                </svg>
                 End Session
               </button>
             </div>
@@ -560,6 +567,6 @@ const Dashboard = () => {
       )}
     </div>
   );
-  
-}
+};
+
 export default Dashboard;
