@@ -96,6 +96,8 @@ npm install
 ```
 ## Run chromadb
 ```
+pip install chromadb
+chroma run --path services.chromaService.js
 chroma run --path ./chroma-data
 ```
 #you can use docker if you need
