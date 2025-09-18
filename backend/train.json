@@ -1,0 +1,418 @@
+[
+    {
+      "id": 1,
+      "prompt": "Hi",
+      "completion": "Hi! How can I assist you today?",
+      "category": "greeting",
+      "context": "",
+      "tags": ["welcome", "user_greeting"]
+    },
+    {
+      "id": 2,
+      "prompt": "What is your pricing?",
+      "completion": "Our pricing starts at $99 per month. For details, visit '/dashboard/pricing'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["pricing", "cost", "plans"]
+    },
+    {
+      "id": 3,
+      "prompt": "How do I see my order details?",
+      "completion": "Go to '/yourorder/detailorder' from the dashboard to see your order details.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["ui", "page_navigation", "orders"]
+    },
+    {
+      "id": 4,
+      "prompt": "Can you recommend a plan for a small business?",
+      "completion": "Sure! For small businesses, our Starter Plan is a great fit. You can review its features at '/dashboard/pricing'.",
+      "category": "recommendation",
+      "context": "",
+      "tags": ["plans", "recommendation", "small_business"]
+    },
+    {
+      "id": 5,
+      "prompt": "How do I add a new website?",
+      "completion": "To add a new website, click 'Add Website' on your dashboard or go to '/dashboard/addwebsite'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["website", "add", "dashboard"]
+    },
+    {
+      "id": 6,
+      "prompt": "Can I filter websites by domain rating?",
+      "completion": "Yes, use the Domain Rating slider in the filter panel to select your preferred range.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["filter", "domain_rating", "search"]
+    },
+    {
+      "id": 7,
+      "prompt": "What does 'Exclude Existing Domains & IPs' mean?",
+      "completion": "This filter lets you exclude domains and IPs you already own or have purchased from your search results.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["filter", "exclude", "domains", "ips"]
+    },
+    {
+      "id": 8,
+      "prompt": "How do I change the currency for prices?",
+      "completion": "You can change the currency by selecting your preferred option in the Currency dropdown in the filter panel.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["currency", "settings", "filter"]
+    },
+    {
+      "id": 9,
+      "prompt": "I can't find the group filter",
+      "completion": "The Group filter is under the 'Exclude Existing Domains & IPs' section. If you need help, visit '/dashboard/help'.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["filter", "group", "help"]
+    },
+    {
+      "id": 10,
+      "prompt": "Can you recommend a website for backlinks?",
+      "completion": "Sure! Please specify your niche or target country, and I'll suggest relevant websites for backlinks.",
+      "category": "recommendation",
+      "context": "",
+      "tags": ["backlinks", "recommendation", "niche"]
+    },
+    {
+      "id": 11,
+      "prompt": "What is the difference between Permanent Article and Yearly Article?",
+      "completion": "A Permanent Article stays on the website indefinitely, while a Yearly Article is published for one year and may be removed afterward.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["article", "permanent", "yearly"]
+    },
+    {
+      "id": 12,
+      "prompt": "How do I reset my password?",
+      "completion": "Click 'Forgot Password' on the login page or go to '/auth/resetpassword' and follow the instructions.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["password", "reset", "auth"]
+    },
+    {
+      "id": 13,
+      "prompt": "Can I export my website list?",
+      "completion": "Yes, click the 'Export' button at the top of the website table or go to '/dashboard/export'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["export", "website", "dashboard"]
+    },
+    {
+      "id": 14,
+      "prompt": "The filter panel is not responsive on my phone",
+      "completion": "Sorry for the inconvenience. Please refresh the page. If the issue persists, contact support at '/dashboard/help'.",
+      "category": "feedback",
+      "context": "User reported filter panel issue on mobile",
+      "tags": ["responsive", "mobile", "feedback"]
+    },
+    {
+      "id": 15,
+      "prompt": "How do I contact support?",
+      "completion": "Contact support by clicking the 'Help' icon or visiting '/dashboard/help'.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["support", "help", "contact"]
+    },
+    {
+      "id": 16,
+      "prompt": "Can I filter by traffic and referring domains at the same time?",
+      "completion": "Absolutely! Use the sliders for Organic Traffic and Referring Domains in the filter panel to set your desired ranges.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["filter", "traffic", "referring_domains"]
+    },
+    {
+      "id": 17,
+      "prompt": "What is the minimum domain rating I can select?",
+      "completion": "The minimum domain rating is shown on the left end of the Domain Rating slider in the filter panel.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["domain_rating", "filter", "minimum"]
+    },
+    {
+      "id": 18,
+      "prompt": "I want to see only EU websites",
+      "completion": "Filter by country and select 'EU' or specific European countries in the Country (Traffic) filter.",
+      "category": "recommendation",
+      "context": "",
+      "tags": ["country", "EU", "filter"]
+    },
+    {
+      "id": 19,
+      "prompt": "How do I leave feedback?",
+      "completion": "Leave feedback by clicking the 'Feedback' button in the sidebar or visiting '/dashboard/feedback'.",
+      "category": "feedback",
+      "context": "",
+      "tags": ["feedback", "user_feedback"]
+    },
+    {
+      "id": 20,
+      "prompt": "Your recommendations were not helpful",
+      "completion": "Thank you for your feedback. Can you tell me more about what you were looking for? I'll try to improve my suggestions.",
+      "category": "feedback",
+      "context": "User received recommendations",
+      "tags": ["recommendation", "feedback", "improvement"]
+    },
+    {
+      "id": 21,
+      "prompt": "Show me all websites with a spam score below 10",
+      "completion": "Set the Spam Score slider to a maximum of 10 in the filter panel to see those websites.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["spam_score", "filter", "search"]
+    },
+    {
+      "id": 22,
+      "prompt": "How do I navigate to the dashboard?",
+      "completion": "Click the 'Dashboard' link in the main navigation menu or go to '/dashboard'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["dashboard", "navigation", "ui"]
+    },
+    {
+      "id": 23,
+      "prompt": "Can I save my filter settings?",
+      "completion": "Yes, click the 'Save Filter' button at the bottom of the filter panel.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["filter", "save", "settings"]
+    },
+    {
+      "id": 24,
+      "prompt": "What happens if I exclude IPs?",
+      "completion": "Excluding IPs will remove websites from your results that share IP addresses with domains you already own or have purchased.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["exclude", "IPs", "filter"]
+    },
+    {
+      "id": 25,
+      "prompt": "How do I view website details?",
+      "completion": "Click on any website in the list to view its details, metrics, and available options.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["website", "details", "metrics"]
+    },
+    {
+      "id": 26,
+      "prompt": "Can I filter by niche?",
+      "completion": "Yes, use the 'Allowed Niches' filter to select one or more niches for your search.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["niche", "filter", "search"]
+    },
+    {
+      "id": 27,
+      "prompt": "How do I log out?",
+      "completion": "Click your profile icon in the top right corner and select 'Log Out' from the dropdown menu.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["logout", "profile", "navigation"]
+    },
+    {
+      "id": 28,
+      "prompt": "What is the maximum traffic I can filter for?",
+      "completion": "The maximum traffic value is shown on the right end of the Organic Traffic slider. Adjust the slider to set your preferred range.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["traffic", "filter", "maximum"]
+    },
+    {
+      "id": 29,
+      "prompt": "Can I filter by multiple categories?",
+      "completion": "Yes, select as many categories as you like in the Category filter. Your results will update automatically.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["category", "filter", "search"]
+    },
+    {
+      "id": 30,
+      "prompt": "How do I add a new group?",
+      "completion": "Go to '/dashboard/groups' and click 'Add Group'. Enter the group name and save.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["group", "add", "dashboard"]
+    },
+    {
+      "id": 31,
+      "prompt": "I want to see only websites with permanent articles",
+      "completion": "Use the Permanent Article price slider to filter for websites offering permanent articles.",
+      "category": "recommendation",
+      "context": "",
+      "tags": ["permanent_article", "filter", "search"]
+    },
+    {
+      "id": 32,
+      "prompt": "Can I change the language of the interface?",
+      "completion": "Yes, change the language by selecting your preferred option in the Language dropdown in '/dashboard/settings'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["language", "settings", "interface"]
+    },
+    {
+      "id": 33,
+      "prompt": "Can I delete a website from my account?",
+      "completion": "Yes, go to '/dashboard/websites', select the website you want to delete, and click the 'Delete' button.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["website", "delete", "account"]
+    },
+    {
+      "id": 34,
+      "prompt": "How do I update my profile information?",
+      "completion": "To update your profile, visit '/dashboard/settings/profile' and edit your details.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["profile", "update", "settings"]
+    },
+    {
+      "id": 35,
+      "prompt": "What payment methods do you accept?",
+      "completion": "We accept credit cards, PayPal, and bank transfers. You can manage payment options at '/dashboard/billing'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["payment", "methods", "billing"]
+    },
+    {
+      "id": 36,
+      "prompt": "Can I get a refund?",
+      "completion": "Refunds are available within 30 days of purchase. Please contact support via '/dashboard/help' for assistance.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["refund", "support", "purchase"]
+    },
+    {
+      "id": 37,
+      "prompt": "How do I change my password?",
+      "completion": "Go to '/dashboard/settings/security' and select 'Change Password'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["password", "change", "security"]
+    },
+    {
+      "id": 38,
+      "prompt": "Can I view my billing history?",
+      "completion": "Yes, your billing history is available at '/dashboard/billing/history'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["billing", "history", "payments"]
+    },
+    {
+      "id": 39,
+      "prompt": "How do I contact the admin?",
+      "completion": "You can contact the admin by sending a message through '/dashboard/help' or emailing admin@example.com.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["admin", "contact", "support"]
+    },
+    {
+      "id": 40,
+      "prompt": "Can I set up two-factor authentication?",
+      "completion": "Yes, enable two-factor authentication in '/dashboard/settings/security'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["security", "2FA", "settings"]
+    },
+    {
+      "id": 41,
+      "prompt": "How do I view notifications?",
+      "completion": "Notifications are shown in the bell icon at the top right or at '/dashboard/notifications'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["notifications", "dashboard", "alerts"]
+    },
+    {
+      "id": 42,
+      "prompt": "Can I customize my dashboard layout?",
+      "completion": "Yes, you can customize your dashboard by dragging and dropping widgets at '/dashboard'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["dashboard", "customize", "widgets"]
+    },
+    {
+      "id": 43,
+      "prompt": "How do I invite a team member?",
+      "completion": "Invite team members by going to '/dashboard/team' and clicking 'Invite Member'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["team", "invite", "collaboration"]
+    },
+    {
+      "id": 44,
+      "prompt": "Can I set up email alerts for new orders?",
+      "completion": "Yes, configure email alerts in '/dashboard/settings/notifications'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["email", "alerts", "orders"]
+    },
+    {
+      "id": 45,
+      "prompt": "How do I access API documentation?",
+      "completion": "API documentation is available at '/dashboard/api/docs'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["API", "documentation", "developer"]
+    },
+    {
+      "id": 46,
+      "prompt": "Can I change my subscription plan?",
+      "completion": "Change your subscription plan at '/dashboard/billing/subscription'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["subscription", "plan", "billing"]
+    },
+    {
+      "id": 47,
+      "prompt": "How do I report a bug?",
+      "completion": "Report bugs by clicking 'Report Issue' in the sidebar or visiting '/dashboard/help/bug'.",
+      "category": "feedback",
+      "context": "",
+      "tags": ["bug", "report", "issue"]
+    },
+    {
+      "id": 48,
+      "prompt": "Can I get a demo of the platform?",
+      "completion": "Request a demo by filling out the form at '/dashboard/demo'.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["demo", "request", "platform"]
+    },
+    {
+      "id": 49,
+      "prompt": "How do I view analytics for my websites?",
+      "completion": "View website analytics at '/dashboard/websites/analytics'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["analytics", "websites", "dashboard"]
+    },
+    {
+      "id": 50,
+      "prompt": "Can I set up custom filters?",
+      "completion": "Yes, create and save custom filters in the filter panel or at '/dashboard/filters'.",
+      "category": "FAQ",
+      "context": "",
+      "tags": ["filters", "custom", "search"]
+    },
+    {
+      "id": 51,
+      "prompt": "How do I access the help center?",
+      "completion": "Access the help center at '/dashboard/help'.",
+      "category": "navigation",
+      "context": "",
+      "tags": ["help", "support", "center"]
+    },
+    {
+      "id": 52,
+      "prompt": "Can I undo a recent action?",
+      "completion": "Some actions can be undone. Check for an 'Undo' button or visit '/dashboard/activity' to review recent actions.",
+      "category": "customer_support",
+      "context": "",
+      "tags": ["undo", "activity", "actions"]
+    }
+  ]  
