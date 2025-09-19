@@ -6,7 +6,7 @@ import './index.css';
 import axios from 'axios';
 
 interface Message {
-  id: number;
+  _id: string;
   sessionId: string;
   sender: 'user' | 'bot';
   text: string;
@@ -36,7 +36,7 @@ const Dashboard = () => {
   const [sessionReady, setSessionReady] = useState(false);
   const [sessionId, setSessionId] = useState<string>('');
   const [thinking, setThinking] = useState(false);
-  const [Like,setLike]=useState(false)
+  const [Like, setLike] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -72,7 +72,7 @@ const Dashboard = () => {
         console.error('Failed to fetch message history:', err);
         // Add default welcome message if no history exists
         setMessages([{
-          id: Date.now(),
+          _id: 'welcome-' + Date.now(),
           sessionId,
           text: "Hi there! I'm your Linkbuilder Assistant. How can I help you today?",
           sender: 'bot',
@@ -97,8 +97,11 @@ const Dashboard = () => {
   const handleSendMessage = async () => {
     if (!sessionReady || inputText.trim() === '') return;
   
+    // Create a temporary ID for the user message (will be replaced by backend ID)
+    const tempUserMessageId = 'temp-' + Date.now();
+    
     const newUserMessage: Message = {
-      id: Date.now(),
+      _id: tempUserMessageId,
       sessionId,
       text: inputText,
       sender: 'user',
@@ -116,7 +119,7 @@ const Dashboard = () => {
       // Mark message as delivered
       setMessages(prev =>
         prev.map(msg =>
-          msg.id === newUserMessage.id ? { ...msg, status: 'delivered' } : msg
+          msg._id === tempUserMessageId ? { ...msg, status: 'delivered' } : msg
         )
       );
   
@@ -131,6 +134,16 @@ const Dashboard = () => {
   
       // Extract bot message from the response structure
       const botMessageData = response.data.botMessage;
+      const userMessageData = response.data.userMessage;
+  
+      // Update the user message with the actual ID from backend
+      setMessages(prev =>
+        prev.map(msg =>
+          msg._id === tempUserMessageId 
+            ? { ...msg, _id: userMessageData._id, status: 'read' } 
+            : msg
+        )
+      );
   
       // Simulate thinking time for better UX
       setTimeout(() => {
@@ -138,7 +151,7 @@ const Dashboard = () => {
         setThinking(false);
   
         const newBotMessage: Message = {
-          id: Date.now() + 1,
+          _id: botMessageData._id,
           sessionId,
           text: botMessageData?.text || "Sorry, I couldn't understand that.",
           sender: 'bot',
@@ -157,7 +170,7 @@ const Dashboard = () => {
       setThinking(false);
   
       const errorMessage: Message = {
-        id: Date.now() + 1,
+        _id: 'error-' + Date.now(),
         sessionId,
         text: "Sorry, I'm having trouble connecting to the server. Please try again later.",
         sender: 'bot',
@@ -169,32 +182,6 @@ const Dashboard = () => {
       setMessages(prev => [...prev, errorMessage]);
     }
   };
-
-  const FeedbackButtons = ({ messageId, initialHelpful }) => {
-    // initialHelpful can be true, false, or null (not rated yet)
-    const [feedback, setFeedback] = useState(initialHelpful); 
-  
-    const handleFeedback = async (value) => {
-      try {
-        setFeedback(value); // update local state
-  
-        const response = await axios.put(
-          `http://localhost:3001/api/messages/${messageId}`,
-          { helpful: value }, // true for like, false for dislike
-          { withCredentials: true }
-        );
-  
-        if (response.status === 200) {
-          console.log("Feedback updated successfully:", response.data);
-        } else {
-          console.error("Failed to update feedback");
-        }
-      } catch (err) {
-        console.error("Error updating feedback:", err);
-      }
-    };}
-
- 
 
   const toggleChat = () => { 
     setIsChatOpen(!isChatOpen); 
@@ -211,7 +198,7 @@ const Dashboard = () => {
     localStorage.setItem('chatSessionId', newSessionId);
 
     setMessages([{
-      id: Date.now(),
+      _id: 'welcome-' + Date.now(),
       sessionId: newSessionId,
       text: "Hi there! I'm your Linkbuilder Assistant. How can I help you today?",
       sender: 'bot',
@@ -228,15 +215,16 @@ const Dashboard = () => {
     if (e.key === 'Enter') handleSendMessage();
   };
 
-  const handleFeedback = (messageId: number, helpful: boolean) => {
+  const handleFeedback = (messageId: string, helpful: boolean) => {
+    // Update local state immediately
     setMessages(prev =>
       prev.map(msg =>
-        msg.id === messageId ? { ...msg, helpful } : msg
+        msg._id === messageId ? { ...msg, helpful } : msg
       )
     );
     
     // Send feedback to backend
-    axios.post(`http://localhost:3001/api/messages/${ messageId}`, {
+    axios.put(`http://localhost:3001/api/messages/${messageId}`, {
       helpful
     }, { withCredentials: true }).catch(err => {
       console.error('Failed to send feedback:', err);
@@ -281,7 +269,6 @@ const Dashboard = () => {
 
   // Sample data
   const faqCategories = [
-    
     {
       title: "FAQ",
       questions: [
@@ -290,7 +277,6 @@ const Dashboard = () => {
         "What does 'Exclude Existing Domains & IPs' mean?",
         "What is the difference between Permanent Article and Yearly Article?",
         "Can I export my website list?",
-        
       ]
     },
     {
@@ -300,7 +286,6 @@ const Dashboard = () => {
         "How do I add a new website?",
         "Show me all websites with a spam score below 10",
         "How do I navigate to the dashboard?",
-      
       ]
     },
     {
@@ -320,7 +305,6 @@ const Dashboard = () => {
         "How do I reset my password?",
         "How do I contact support?",
         "Can I delete a website from my account?",
-       
       ]
     },
     {
@@ -397,6 +381,7 @@ const Dashboard = () => {
               </button>
             </div>
             
+            
             {activeTab === 'chat' && (
               <>
                 <div className="messages-container">
@@ -412,7 +397,7 @@ const Dashboard = () => {
                   ) : (
                     <>
                       {messages.map((message) => (
-                        <div key={message.id} className={`message ${message.sender}`}>
+                        <div key={message._id} className={`message ${message.sender}`}>
                           <div className="message-avatar">
                             {message.sender === 'user' ? <FaUser /> : <FaRobot />}
                           </div>
@@ -428,17 +413,17 @@ const Dashboard = () => {
                               <div className="feedback-buttons">
                                 <span>Was this helpful?</span>
                                 <button
-        className={`feedback-btn thumbs-up ${message.helpful === true ? 'active' : ''}`}
-        onClick={() => handleFeedback(message.id, true)}
-      >
-        <FaThumbsUp />
-      </button>
-      <button
-        className={`feedback-btn thumbs-down ${message.helpful === false ? 'active' : ''}`}
-        onClick={() => handleFeedback(message.id, false)}
-      >
-        <FaThumbsDown />
-      </button>
+                                  className={`feedback-btn thumbs-up ${message.helpful === true ? 'active' : ''}`}
+                                  onClick={() => handleFeedback(message._id, true)}
+                                >
+                                  <FaThumbsUp />
+                                </button>
+                                <button
+                                  className={`feedback-btn thumbs-down ${message.helpful === false ? 'active' : ''}`}
+                                  onClick={() => handleFeedback(message._id, false)}
+                                >
+                                  <FaThumbsDown />
+                                </button>
                               </div>
                             )}
                           </div>
