@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaComments, FaTimes, FaPaperPlane, FaSearch, FaChevronDown, FaChevronUp,
+import { FaComments,FaFileAlt, FaTimes, FaPaperPlane, FaSearch, FaChevronDown, FaChevronUp,
   FaUser, FaRobot, FaThumbsUp, FaThumbsDown, FaEllipsisH, FaRegStar, 
   FaStar, FaRegLightbulb, FaBook, FaVideo, FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 import './index.css'; 
@@ -89,6 +89,37 @@ const Dashboard = () => {
 
     fetchMessageHistory();
   }, [sessionReady, sessionId]);
+
+
+  const learningResources = [ 
+   
+  { 
+    id: 1,
+    icon: <FaVideo />, 
+    title: "Video Tutorials", 
+    description: "Step-by-step guides",
+    type: "video",
+    url: "https://www.youtube.com/embed/dGcsHMXbSOA"
+  }, 
+  { 
+    id: 2,
+    icon: <FaBook />, 
+    title: "Documentation", 
+    description: "Complete technical reference",
+    type: "document",
+    url: "/docs/react-cheatsheet.pdf"
+  },
+  
+  { 
+    id: 3,
+    icon: <FaRegLightbulb />, 
+    title: "Best Practices", 
+    description: "Expert recommendations",
+    type: "link",
+    url: "https://example.com/best-practices"
+  } 
+];
+
 
   // Auto-scroll to bottom when messages change
   useEffect(() => {
@@ -320,12 +351,7 @@ const Dashboard = () => {
   
   const quickReplies = [ "Can I export my website list", "How do I contact support?", "I can't find the group filter", "How do I leave feedback?" ]; 
   
-  const learningResources = [ 
-    { icon: <FaBook />, title: "Documentation", description: "Complete technical reference" }, 
-    { icon: <FaVideo />, title: "Video Tutorials", description: "Step-by-step guides" }, 
-    { icon: <FaCode />, title: "Code Examples", description: "Real-world use cases" }, 
-    { icon: <FaRegLightbulb />, title: "Best Practices", description: "Expert recommendations" } 
-  ];
+ 
   
   const helpResources: Resource[] = [
     { id: 1, title: "Getting Started Guide", type: "guide", read: false },
@@ -471,18 +497,40 @@ const Dashboard = () => {
               <div className="resources-container">
                 <h4>Recommended Resources</h4>
                 <div className="resources-grid">
-                  {learningResources.map((resource, index) => (
-                    <div key={index} className="resource-card">
-                      <div className="resource-icon">
-                        {resource.icon}
-                      </div>
-                      <h5>{resource.title}</h5>
-                      <p>{resource.description}</p>
-                      <button className="resource-link">
-                        Explore <FaExternalLinkAlt />
-                      </button>
-                    </div>
-                  ))}
+                 {learningResources.map((resource, index) => (
+  <div key={index} className="resource-card">
+    <div className="resource-icon">{resource.icon}</div>
+    <h5>{resource.title}</h5>
+    <p>{resource.description}</p>
+
+    {resource.type === 'video' && (
+      <div className="video-container">
+        <iframe
+          width="100%"
+          height="200"
+          src={resource.url}
+          title={resource.title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )}
+
+    {resource.type === 'document' && (
+      <a href={resource.url} target="_blank" rel="noopener noreferrer" className="resource-link">
+        Open Document <FaFileAlt />
+      </a>
+    )}
+
+    {resource.type === 'link' && (
+      <a href={resource.url} target="_blank" rel="noopener noreferrer" className="resource-link">
+        Explore <FaExternalLinkAlt />
+      </a>
+    )}
+  </div>
+))}
+
                 </div>
                 
                 <div className="suggested-resources">
