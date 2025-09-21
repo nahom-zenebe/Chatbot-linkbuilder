@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FaComments, FaTimes, FaPaperPlane, FaSearch, FaChevronDown,
+import { FaComments, FaTimes, FaPaperPlane, FaSearch, FaChevronDown, FaChevronUp,
   FaUser, FaRobot, FaThumbsUp, FaThumbsDown, FaEllipsisH, FaRegStar, 
   FaStar, FaRegLightbulb, FaBook, FaVideo, FaCode, FaExternalLinkAlt } from 'react-icons/fa';
 import './index.css'; 
@@ -36,6 +36,7 @@ const Dashboard = () => {
   const [sessionReady, setSessionReady] = useState(false);
   const [sessionId, setSessionId] = useState<string>('');
   const [thinking, setThinking] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({});
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -229,6 +230,13 @@ const Dashboard = () => {
     setTimeout(() => handleSendMessage(), 100);
   };
 
+  const toggleCategory = (categoryTitle: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryTitle]: !prev[categoryTitle]
+    }));
+  };
+
   const markResourceAsRead = (resourceId: number) => {
     // This would typically update the resource as read in the backend
     console.log(`Resource ${resourceId} marked as read`);
@@ -256,30 +264,30 @@ const Dashboard = () => {
 
   // Sample data
   const faqCategories = [
-    
     {
       title: "FAQ",
+      content: "Find answers to common questions about our services and features.",
       questions: [
         "What is your pricing?",
         "Can I filter websites by domain rating?",
         "What does 'Exclude Existing Domains & IPs' mean?",
         "What is the difference between Permanent Article and Yearly Article?",
         "Can I export my website list?",
-        
       ]
     },
     {
       title: "Navigation",
+      content: "Learn how to navigate through the application and find what you need.",
       questions: [
         "How do I see my order details?",
         "How do I add a new website?",
         "Show me all websites with a spam score below 10",
         "How do I navigate to the dashboard?",
-      
       ]
     },
     {
       title: "Recommendation",
+      content: "Get personalized recommendations based on your needs.",
       questions: [
         "Can you recommend a plan for a small business?",
         "Can you recommend a website for backlinks?",
@@ -289,17 +297,18 @@ const Dashboard = () => {
     },
     {
       title: "Customer Support",
+      content: "Get help with account management and technical issues.",
       questions: [
         "How do I change the currency for prices?",
         "I can't find the group filter",
         "How do I reset my password?",
         "How do I contact support?",
         "Can I delete a website from my account?",
-       
       ]
     },
     {
       title: "Feedback",
+      content: "Share your thoughts and report any issues you encounter.",
       questions: [
         "The filter panel is not responsive on my phone",
         "How do I leave feedback?",
@@ -503,18 +512,32 @@ const Dashboard = () => {
                 <div className="faq-categories">
                   {faqCategories.map((category, index) => (
                     <div key={index} className="faq-category">
-                      <h5>{category.title}</h5>
-                      <div className="faq-list">
-                        {category.questions.map((question, qIndex) => (
-                          <button 
-                            key={qIndex} 
-                            className="faq-item"
-                            onClick={() => handleFAQClick(question)}
-                          >
-                            {question}
-                          </button>
-                        ))}
-                      </div>
+                      <button 
+                        className="faq-category-header"
+                        onClick={() => toggleCategory(category.title)}
+                      >
+                        <h5>{category.title}</h5>
+                        <span className="dropdown-icon">
+                          {expandedCategories[category.title] ? <FaChevronUp /> : <FaChevronDown />}
+                        </span>
+                      </button>
+                      
+                      {expandedCategories[category.title] && (
+                        <div className="faq-category-content">
+                          <p>{category.content}</p>
+                          <div className="faq-list">
+                            {category.questions.map((question, qIndex) => (
+                              <button 
+                                key={qIndex} 
+                                className="faq-item"
+                                onClick={() => handleFAQClick(question)}
+                              >
+                                {question}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
