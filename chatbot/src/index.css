@@ -58,7 +58,7 @@ body {
 }
 
 .dropdown-icon {
-  font-size: 0.75rem;
+  font-size: 0.70rem;
 }
 
 .header-right {
@@ -554,6 +554,203 @@ body {
   height: 20px;
 }
 
+
+
+/* General containers */
+.resources-container,
+.help-container {
+  background: linear-gradient(to bottom, #5e8ece, #ffffff);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.08);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+}
+
+/* Titles */
+.resources-container h4,
+.help-container h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #b3bcd5; /* blue-700 */
+  margin-bottom: 20px;
+}
+
+.resources-container h5,
+.help-container h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e3a8a; /* darker blue */
+  margin-bottom: 10px;
+}
+
+/* Grid of resources */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Each resource card */
+.resource-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e0ecff;
+  box-shadow: 0 2px 6px rgba(0, 64, 128, 0.05);
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 64, 128, 0.12);
+}
+
+/* Icon inside card */
+.resource-icon {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+/* Links */
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.resource-link:hover {
+  color: #1e40af;
+}
+
+/* Suggested resources */
+.suggested-resources {
+  margin-top: 30px;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f0f7ff;
+  border: 1px solid #dbeafe;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resource-item:hover {
+  background: #e0efff;
+}
+
+.resource-item.read {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #6b7280;
+}
+
+.unread-indicator {
+  width: 10px;
+  height: 10px;
+  background: #2563eb;
+  border-radius: 50%;
+}
+
+/* FAQ Section */
+.faq-categories {
+  margin-top: 20px;
+}
+
+.faq-category {
+  margin-bottom: 12px;
+  border: 1px solid #e0ecff;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 64, 128, 0.05);
+}
+
+.faq-category-header {
+  width: 100%;
+  text-align: left;
+  padding: 14px;
+  background: #f0f7ff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-category-header:hover {
+  background: #e0efff;
+}
+
+.faq-category-content {
+  padding: 14px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.faq-item {
+  display: block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.faq-item:hover {
+  background: #f3f4f6;
+}
+
+/* Contact Support */
+.contact-support {
+  margin-top: 30px;
+  text-align: center;
+  background: #f0f7ff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #dbeafe;
+}
+
+.btn-support {
+  margin-top: 12px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-support:hover {
+  background: #1e40af;
+}
+
+
 .typing-indicator span {
   width: 6px;
   height: 6px;
@@ -604,6 +801,11 @@ body {
   text-overflow: ellipsis;
   max-width: 100%;
 }
+.resources-container h4{
+  color: #c0d4dd;
+}
+
+
 
 .quick-reply:hover {
   background-color: #f1f3f4;
@@ -619,7 +821,7 @@ body {
 .resources-container h4, .help-container h4 {
   font-size: 1rem;
   margin-bottom: 1rem;
-  color: #001e2b;
+  color: #d6e6ed;
 }
 
 .resources-grid {
@@ -627,24 +829,36 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
+
 }
 
 .resource-card {
-  background: #f8f9fa;
-  border-radius: 8px;
+
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background: 
+    linear-gradient(#f8f9fa, #f8f9fa) padding-box, /* inside */
+    linear-gradient(90deg, #113f8f, #1549ab) border-box; /* border */
   padding: 1rem;
   text-align: center;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
+
 
 .resource-card:hover {
   background: #e8e8e8;
   transform: translateY(-2px);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background: 
+    linear-gradient(#f8f9fa, #f8f9fa) padding-box, /* inside */
+    linear-gradient(90deg, #113f8f, #1549ab) border-box; /* border */
 }
 
 .resource-icon {
   font-size: 1.5rem;
-  color: #00684a;
+  color: #061e67;
   margin-bottom: 0.5rem;
 }
 
@@ -678,7 +892,7 @@ body {
 .suggested-resources h5 {
   font-size: 0.875rem;
   margin-bottom: 0.75rem;
-  color: #6b7377;
+  color: #04273f;
 }
 
 .resource-list {
@@ -706,7 +920,7 @@ body {
 }
 
 .resource-type {
-  color: #00684a;
+  color: #1f58a3;
   font-size: 0.875rem;
 }
 
@@ -719,7 +933,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #00684a;
+  background: #0b5893;
 }
 
 .faq-categories {
@@ -1099,7 +1313,7 @@ body {
   height: 60px;
   padding: 12px 20px;
   background-color: #ffffff; /* clean white */
-  border: 2px solid #3e72df; /* elegant deep blue */
+  border: 2px solid #dadce0; /* elegant deep blue */
   border-radius: 10px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -1242,3 +1456,4 @@ body {
 .resource-link:hover {
   text-decoration: underline;
 }
+
