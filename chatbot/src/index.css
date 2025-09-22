@@ -482,7 +482,7 @@ body {
 }
 
 .message.user .message-avatar {
-  background-color: #00684a;
+  background-color: #050a18;
   color: white;
 }
 
@@ -500,7 +500,7 @@ body {
 }
 
 .message.user .message-content {
-  background-color: #00684a;
+  background-color: #2d528e;
   color: white;
   border-top-right-radius: 4px;
 }
